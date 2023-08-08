@@ -194,7 +194,7 @@ form{
     width: 500px;   
     height: 500px;  
     background-color: white; 
-    border: 2px solid grey;
+    border: 2px solid #DDDCDC ;
     margin: 15px; 
     margin-top: 15px;
     margin-bottom: 50px; 
@@ -204,7 +204,8 @@ form{
     float:left;   
     border-radius: 5px;
     box-shadow: 1px 1px 2px grey;
-}
+} 
 #abajo{
-  margin-top: 190px;
+  padding-top: 50px;
 }
+
