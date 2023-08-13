@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Simbolos";
+  src: url(../webfonts/WebSymbols-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
 .jumbotron,
 .card-body,
 .container,
@@ -68,12 +74,20 @@ nav a {
 }
 
 footer {
+  background-color: #212529;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
 footer p {
+  color: white;
   margin-bottom: .25rem;
+}
+footer a{
+  color: #F09100;
+}
+footer a:hover{
+  color: #F09100;
 }
 
 .site-header a {
@@ -189,22 +203,18 @@ a.custom-card:hover {
   color: orange;
 }
 
-form{
-  display: block; 
-    width: 500px;   
-    height: 500px;  
-    background-color: white; 
-    border: 2px solid #DDDCDC ;
-    margin: 15px; 
-    margin-top: 15px;
-    margin-bottom: 50px; 
-    margin-left: 30%; 
-    margin-right: 60px; 
-    padding: 20px; 
-    float:left;   
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px grey;
-} 
+form {
+  display: block;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border: 2px solid #DDDCDC;
+  margin: 0 auto;
+  margin-top: 15vh; 
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px grey;
+}
 #abajo{
   padding-top: 50px;
 }
@@ -228,4 +238,29 @@ form{
 .info p:nth-child(3){
  font-weight: bold;
 }
+.icon{
+  font-family: "Simbolos";
+}
+nav >ul > li > a{
+  display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+    transition: all 300ms;
 
+}
+
+nav ul li a:hover  { 
+  color: #F09100 !important;
+  transform: scale(1.2, 1.2);
+}
+
+#muebles:hover{
+  transform: scale(1.03);
+}
+#juguetes:hover{
+  transform: scale(1.03);
+}
+#autos:hover{
+  transform: scale(1.03);
+}
