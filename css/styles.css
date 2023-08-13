@@ -222,4 +222,10 @@ form{
   margin-right: 30px;
   border-radius: 10px;
 }
+.img img:hover{
+  transform:scale(1.02);
+}
+.info p:nth-child(3){
+ font-weight: bold;
+}
 
