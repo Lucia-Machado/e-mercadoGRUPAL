@@ -73,23 +73,6 @@ nav a {
   font-size: 38px;
 }
 
-footer {
-  background-color: #212529;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  color: white;
-  margin-bottom: .25rem;
-}
-footer a{
-  color: #F09100;
-}
-footer a:hover{
-  color: #F09100;
-}
-
 .site-header a {
   color: white;
   transition: ease-in-out color .15s;
@@ -171,12 +154,14 @@ footer a:hover{
   }
 }
 
+/* Inicio de sesion */
 .signin {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: auto;
 }
+/**/
 
 #spinner-wrapper {
   position: fixed;
@@ -203,6 +188,7 @@ a.custom-card:hover {
   color: orange;
 }
 
+/* Formulario */
 form {
   display: block;
   width: 500px;
@@ -241,20 +227,21 @@ form {
 .icon{
   font-family: "Simbolos";
 }
+
+/* Navegacion */
 nav >ul > li > a{
   display: block;
     color: white;
     text-decoration: none;
     font-size: 35px;
     transition: all 300ms;
-
 }
-
 nav ul li a:hover  { 
   color: #F09100 !important;
   transform: scale(1.2, 1.2);
 }
 
+/* Estilos Categorias */ 
 #muebles:hover{
   transform: scale(1.03);
 }
@@ -263,4 +250,24 @@ nav ul li a:hover  {
 }
 #autos:hover{
   transform: scale(1.03);
+}
+
+/* Pie de pagina */
+footer {        /* Mirarlo en la proxima reunion */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #212529; 
+  color: #fff; 
+  padding: 10px 0; 
+}
+footer p {
+  color: white;
+  margin-bottom: .25rem;
+}
+footer a{
+  color: #F09100;
+}
+footer a:hover{
+  color: #F09100;
 }
