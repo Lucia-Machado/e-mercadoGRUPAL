@@ -189,7 +189,7 @@ a.custom-card:hover {
 }
 
 /* Formulario */
-form {
+.loginb {
   display: block;
   width: 500px;
   height: 500px;
