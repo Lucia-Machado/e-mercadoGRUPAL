@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // si ambos estan llenos
       // almacena en sessionStorage que el usuario ha iniciado sesión
+      //DESAFIATE
       sessionStorage.setItem('loggedIn', 'true');
       //redirige al index
       window.location.href = "index.html";

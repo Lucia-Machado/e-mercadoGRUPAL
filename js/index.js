@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
     document.getElementById("muebles").addEventListener("click", function() {
-        localStorage.setItem("catID", 103);
+        localStorage.setItem("catID", 103); //DESAFIATE
         window.location = "products.html"
     });
 
