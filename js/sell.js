@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         updateTotalCosts();
     });
-
+    let contenidoIndex = localStorage.getItem("EmailPersona");
+    let emailPersona = document.getElementById("emailPersona");
+    emailPersona.innerHTML = `Perfil: ${contenidoIndex}`;
 
     //Configuraciones para el elemento que sube archivos
     let dzoptions = {

@@ -21,6 +21,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let contenidoIndex = localStorage.getItem("EmailPersona");
     let emailPersona = document.getElementById("emailPersona");
-    emailPersona.innerHTML = ` Login as: ${contenidoIndex}`;
+    emailPersona.innerHTML = `Perfil: ${contenidoIndex}`;
 
 });
