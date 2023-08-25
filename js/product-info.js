@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded"()=>{
+document.addEventListener("DOMContentLoaded",()=>{
 
         let contenidoIndex = localStorage.getItem("EmailPersona");
         let emailPersona = document.getElementById("emailPersona");
