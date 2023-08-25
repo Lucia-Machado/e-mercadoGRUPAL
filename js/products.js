@@ -28,14 +28,7 @@ function showProductsList(array) {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  //obtiene datos JSON de la URL AUTOS_URL
-  getJSONData(AUTOS_URL).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      //los almacena dentro del ProductsArray
-      ProductsArray = resultObj.data.products;
-      //llama la funcion
-      showProductsList(ProductsArray);
-    }
+ 
   });
 
   let contenidoIndex = localStorage.getItem("EmailPersona");
@@ -54,6 +47,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
       }
     });
   };
-});
+
 
 
