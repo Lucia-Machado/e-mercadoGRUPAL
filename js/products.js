@@ -37,4 +37,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
       showProductsList(ProductsArray);
     }
   });
+
+  let contenidoIndex = localStorage.getItem("EmailPersona");
+    let emailPersona = document.getElementById("emailPersona");
+    emailPersona.innerHTML = `Perfil: ${contenidoIndex}`;
 });
