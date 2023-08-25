@@ -271,3 +271,14 @@ footer a{
 footer a:hover{
   color: #F09100;
 }
+
+#letterSearch{
+  width: 300px;
+  margin: 0px 10px;
+}
+#flexdiv{
+  display: flex;
+}
+#searchIcon{
+  display: flex;
+}
