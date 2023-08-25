@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
 
 
-    
+
 // CAMBIOS
     document.getElementById("sortAsc").addEventListener("click", function () {
       sortAndShowProducts(ORDER_ASC_BY_NAME);
@@ -126,7 +126,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
       maxPrice = undefined;
       sortAndShowProducts(currentSortCriteria);
   });
+  
+  document.getElementById("letterSearch").addEventListener("input", function () {
+    let searchLetter = this.value.toLowerCase();
+    let filteredProducts = ProductsArray.filter(function (product) {
+        return product.name.toLowerCase().startsWith(searchLetter);
+    });
 
-  // Agrega esta línea para inicializar la lista de productos al cargar la página
+    // Aplica filtros y ordenamientos actuales antes de mostrar los productos
+    let sortedAndFilteredProducts = sortProducts(currentSortCriteria, filterProductsByPrice(filteredProducts, minPrice, maxPrice));
+    showProductsList(sortedAndFilteredProducts);
+});
+
   sortAndShowProducts(ORDER_ASC_BY_NAME);
 });
