@@ -31,6 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "index.html";
     }
   })
+
+  
+  let loggeo = document.getElementById("btn")
+  loggeo.addEventListener("click", ()=>{
+    let email1 = document.getElementById("email").value;
+
+    localStorage.setItem("EmailPersona", email1);
+
+  })
+
 })
 
 

@@ -18,4 +18,9 @@ document.addEventListener("DOMContentLoaded", function(){
         // si no es asi, redirige a login hasta que sea true
         window.location.href = 'login.html';
     }
+
+    let contenidoIndex = localStorage.getItem("EmailPersona");
+    let emailPersona = document.getElementById("emailPersona");
+    emailPersona.innerHTML = ` Login as: ${contenidoIndex}`;
+
 });
