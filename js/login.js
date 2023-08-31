@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const email = document.getElementById('email');
   const pass = document.getElementById('password');
+  const passwordInput = document.getElementById("password");
+  const showPasswordBtn = document.getElementById("showPasswordBtn");
 
 
   // escucha el boton y ejecuta validar
@@ -40,6 +42,17 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("EmailPersona", email1);
 
   })
+
+  // Mostrar contraseña
+  showPasswordBtn.addEventListener("click", function () {
+    // verifica que sea contraseña
+      if (passwordInput.type === "password") {
+        //lo cambia a texto para poder verla
+          passwordInput.type = "text";
+      } else {
+          passwordInput.type = "password";
+      }
+  });
 
 })
 
