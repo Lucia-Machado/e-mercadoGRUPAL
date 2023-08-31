@@ -87,67 +87,63 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 
-// CAMBIOS
-document.getElementById("sortAscPrice").addEventListener("click", function () {
-    sortAndShowProducts(ORDER_BY_PRICE_ASC);
-});
-
-document.getElementById("sortDescPrice").addEventListener("click", function () {
-    sortAndShowProducts(ORDER_BY_PRICE_DESC);
-});
-document.getElementById("sortDescBySoldCount").addEventListener("click", function () {
-    sortAndShowProducts(ORDER_BY_SOLD_COUNT);
-});
-
- document.getElementById("sortAsc").addEventListener("click", function () {
-      sortAndShowProducts(ORDER_ASC_BY_NAME);
-  });
-
-  document.getElementById("sortDesc").addEventListener("click", function () {
-      sortAndShowProducts(ORDER_DESC_BY_NAME);
-  });
-
-  document.getElementById("sortByCount").addEventListener("click", function () {
-      sortAndShowProducts(ORDER_BY_SOLD_COUNT);
-  });
-
-  document.getElementById("rangeFilterCount").addEventListener("click", function () {
-      minPrice = document.getElementById("rangeFilterCountMin").value;
-      maxPrice = document.getElementById("rangeFilterCountMax").value;
-
-      if (minPrice !== "" && !isNaN(minPrice)) {
-          minPrice = parseFloat(minPrice);
-      } else {
-          minPrice = undefined;
-      }
-
-      if (maxPrice !== "" && !isNaN(maxPrice)) {
-          maxPrice = parseFloat(maxPrice);
-      } else {
-          maxPrice = undefined;
-      }
-
-      sortAndShowProducts(currentSortCriteria);
-  });
-
-  document.getElementById("clearRangeFilter").addEventListener("click", function () {
-      document.getElementById("rangeFilterCountMin").value = "";
-      document.getElementById("rangeFilterCountMax").value = "";
-      minPrice = undefined;
-      maxPrice = undefined;
-      sortAndShowProducts(currentSortCriteria);
-  });
-  
-  document.getElementById("letterSearch").addEventListener("input", function () {
-    let searchLetter = this.value.toLowerCase();
-    let filteredProducts = ProductsArray.filter(function (product) {
-        return product.name.toLowerCase().startsWith(searchLetter);
+    // CAMBIOS
+    document.getElementById("sortAscPrice").addEventListener("click", function () {
+        sortAndShowProducts(ORDER_BY_PRICE_ASC);
     });
 
-    // Aplica filtros y ordenamientos actuales antes de mostrar los productos
-    let sortedAndFilteredProducts = sortProducts(currentSortCriteria, filterProductsByPrice(filteredProducts, minPrice, maxPrice));
-    showProductsList(sortedAndFilteredProducts);
-});
+    document.getElementById("sortDescPrice").addEventListener("click", function () {
+        sortAndShowProducts(ORDER_BY_PRICE_DESC);
+    });
+    document.getElementById("sortDescBySoldCount").addEventListener("click", function () {
+        sortAndShowProducts(ORDER_BY_SOLD_COUNT);
+    });
 
-  sortAndShowProducts(ORDER_ASC_BY_NAME);
+    document.getElementById("sortAsc").addEventListener("click", function () {
+        sortAndShowProducts(ORDER_ASC_BY_NAME);
+    });
+
+    document.getElementById("sortDesc").addEventListener("click", function () {
+        sortAndShowProducts(ORDER_DESC_BY_NAME);
+    });
+
+    document.getElementById("rangeFilterCount").addEventListener("click", function () {
+        minPrice = document.getElementById("rangeFilterCountMin").value;
+        maxPrice = document.getElementById("rangeFilterCountMax").value;
+
+        if (minPrice !== "" && !isNaN(minPrice)) {
+            minPrice = parseFloat(minPrice);
+        } else {
+            minPrice = undefined;
+        }
+
+        if (maxPrice !== "" && !isNaN(maxPrice)) {
+            maxPrice = parseFloat(maxPrice);
+        } else {
+            maxPrice = undefined;
+        }
+
+        sortAndShowProducts(currentSortCriteria);
+    });
+
+    document.getElementById("clearRangeFilter").addEventListener("click", function () {
+        document.getElementById("rangeFilterCountMin").value = "";
+        document.getElementById("rangeFilterCountMax").value = "";
+        minPrice = undefined;
+        maxPrice = undefined;
+        sortAndShowProducts(currentSortCriteria);
+    });
+
+    document.getElementById("letterSearch").addEventListener("input", function () {
+        let searchLetter = this.value.toLowerCase();
+        let filteredProducts = ProductsArray.filter(function (product) {
+            return product.name.toLowerCase().startsWith(searchLetter);
+        });
+
+        // Aplica filtros y ordenamientos actuales antes de mostrar los productos
+        let sortedAndFilteredProducts = sortProducts(currentSortCriteria, filterProductsByPrice(filteredProducts, minPrice, maxPrice));
+        showProductsList(sortedAndFilteredProducts);
+    });
+
+    sortAndShowProducts(ORDER_ASC_BY_NAME);
 });
