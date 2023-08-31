@@ -88,7 +88,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 // CAMBIOS
-    document.getElementById("sortAsc").addEventListener("click", function () {
+document.getElementById("sortAscPrice").addEventListener("click", function () {
+    sortAndShowProducts(ORDER_BY_PRICE_ASC);
+});
+
+document.getElementById("sortDescPrice").addEventListener("click", function () {
+    sortAndShowProducts(ORDER_BY_PRICE_DESC);
+});
+document.getElementById("sortDescBySoldCount").addEventListener("click", function () {
+    sortAndShowProducts(ORDER_BY_SOLD_COUNT);
+});
+
+ document.getElementById("sortAsc").addEventListener("click", function () {
       sortAndShowProducts(ORDER_ASC_BY_NAME);
   });
 
