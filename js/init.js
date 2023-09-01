@@ -11,6 +11,7 @@ let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
 
+
 let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
