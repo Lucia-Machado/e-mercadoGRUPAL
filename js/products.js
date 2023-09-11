@@ -42,25 +42,19 @@ function showProductsList(array) {
                     <p>${product.description}</p>
                     <p>Precio: ${product.cost} ${product.currency}</p>
                     <p>Vendidos: ${product.soldCount}</p>
+                    <button onclick="selectProduct(${product.id})">Seleccionar</button>
                 </div>
             </div>`;
     }
 
     document.getElementById("products-container").innerHTML = htmlContentToAppend;
-
-    let cards = document.querySelectorAll('.product-card');
-    for (let i = 0; i < cards.length; i++) {
-        let productId = array[i].idProducto; 
-        cards[i].addEventListener('click', function () {
-            redirectProductInfo(productId);
-        });
-    }
 }
 
-function redirectProductInfo(productId) {
+function selectProduct(productId) {
     localStorage.setItem("selectedProduct", productId);
     window.location.href = "../product-info.html";
 }
+
 
 function filterProductsByPrice(products, min, max) {
     return products.filter(product => {
