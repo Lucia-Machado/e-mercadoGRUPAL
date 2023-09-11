@@ -71,7 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then(
       (data) =>
-        (contenidoDePag.innerHTML = `
+        (
+          
+          contenidoDePag.innerHTML = `
                 
         <div>
         <h1 class="contenedor1">${data.name}</h1>
@@ -99,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
         </div>
         </div>
-        `)
+        `
+        )
     );
 });

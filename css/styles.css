@@ -327,17 +327,17 @@ footer a:hover{
   justify-content: center;
   align-items: center;
 
-  width: 200px;
+  width: 250px;
 }
 
 .estrellitas{
   margin-bottom: 80px;
-  margin-top: 300px;
+  margin-top: 30px;
 justify-content: center;
 }
 
 .contenedor1{
-  size: 40px;
+  width: 400px;
 }
 
 .cat1{
@@ -347,11 +347,11 @@ justify-content: center;
 .imagenesgas {
   margin: 50px;
   border: 1px solid #ccc;
-  float: left;
-  width: 180px;
+  
+ 
 }
 
-img:hover {
+.imagenesgas:hover {
   border: 5px solid #fff;
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -361,7 +361,7 @@ img:hover {
 }
 
 .imagenesgas img {
-  width: 150%; 
+  width: 120%; 
   cursor: pointer;
   z-index: 0;
   transition: .25s,z-index 0s .25s;
@@ -369,5 +369,7 @@ img:hover {
 }
 
 .galeria {
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
 }
