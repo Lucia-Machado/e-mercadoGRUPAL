@@ -47,6 +47,19 @@ function showProductsList(array) {
     }
 
     document.getElementById("products-container").innerHTML = htmlContentToAppend;
+
+    let cards = document.querySelectorAll('.product-card');
+    for (let i = 0; i < cards.length; i++) {
+        let productId = array[i].idProducto; 
+        cards[i].addEventListener('click', function () {
+            redirectProductInfo(productId);
+        });
+    }
+}
+
+function redirectProductInfo(productId) {
+    localStorage.setItem("selectedProduct", productId);
+    window.location.href = "../product-info.html";
 }
 
 function filterProductsByPrice(products, min, max) {
