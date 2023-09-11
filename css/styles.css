@@ -332,4 +332,42 @@ footer a:hover{
 
 .estrellitas{
   margin-bottom: 80px;
+  margin-top: 300px;
+justify-content: center;
+}
+
+.contenedor1{
+  size: 40px;
+}
+
+.cat1{
+  font-weight: bold;
+}
+
+.imagenesgas {
+  margin: 50px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+img:hover {
+  border: 5px solid #fff;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-filter: none;
+  filter: none;
+}
+
+.imagenesgas img {
+  width: 150%; 
+  cursor: pointer;
+  z-index: 0;
+  transition: .25s,z-index 0s .25s;
+  place-self: start;
+}
+
+.galeria {
+  justify-content: center;
 }
