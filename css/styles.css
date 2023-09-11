@@ -314,3 +314,22 @@ footer a:hover{
 .claseEstrellaWhite{
   background-color: white;
 }
+.contenedor1{
+  padding-top: 50px;
+  
+}
+
+.imagenesgas{
+  width: 200px;
+}
+.imagenesOrden{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+}
+
+.estrellitas{
+  margin-bottom: 80px;
+}

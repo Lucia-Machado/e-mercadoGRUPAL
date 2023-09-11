@@ -79,4 +79,43 @@ document.addEventListener("DOMContentLoaded",()=>{
         })
 
 
+        const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/"
+
+
+        
+        const numeroProd = localStorage.getItem("selectedProduct")
+        const content  = PRODUCT_INFO_URL + numeroProd + ".json"
+        var contenidoDePag = document.getElementById("contenidoDePag")
+        fetch(content)
+        .then (response =>(response.json()))
+        .then ((data) => (
+                
+                
+                contenidoDePag.innerHTML =   `
+                
+                <div>
+                <h1 class="contenedor1">${data.name}</h1>
+                <hr />
+                
+                <p>Precio: <p>${data.currency}</p> </p><p>${data.cost}</p>
+                <p>Descripcion: </p><p>${data.description}</p>
+                <p>Categoria: </p><p>${data.category}</p>
+                <p>Cantidad vendidos: </p><p>${data.soldCount}</p>
+                <p>Imagenes: </p>
+                <div class="imagenesgas">
+                <img class="imagenesOrden" src="${data.images[0]}"></img>
+                <img class="imagenesOrden" src="${data.images[1]}"></img>
+                <img class="imagenesOrden" src="${data.images[2]}"></img>
+                <img class="imagenesOrden" src="${data.images[3]}"></img>
+                </div>
+                
+                
+                </div>
+                
+                
+                
+                `
+        ))
+        
+
 })
