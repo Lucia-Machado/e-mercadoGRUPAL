@@ -297,3 +297,20 @@ footer a:hover{
   border-radius: 0 5px 5px 0;
 }
 
+.estrellitas{
+  color: #F09100;
+  text-align: center;
+}
+.imgCompleta{
+  color: #F09100;
+}
+.imgNoCompleta{
+  color: #F09100;
+}
+
+.claseEstrella{
+  background-color: #F09100;
+}
+.claseEstrellaWhite{
+  background-color: white;
+}
