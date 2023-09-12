@@ -373,3 +373,16 @@ justify-content: center;
   align-items: center;
   display: flex;
 }
+.form-group{
+  display: block;
+  margin-left: 16%;
+  width: 35%;
+}
+.btnComentarios{
+  display: block;
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: #0087F7;
+  color: white;
+  
+}

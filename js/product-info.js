@@ -105,27 +105,27 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     );
 
-    function calificacion() {
-      if (data[i].score = "5") {
-        data[i].score.innerHTML = `
+  function calificacion() {
+    if (data[i].score = "5") {
+      data[i].score.innerHTML = `
         <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     `
-      }
-      else if (data[i].score = "4") {
-        data[i].score.innerHTML = `
+    }
+    else if (data[i].score = "4") {
+      data[i].score.innerHTML = `
         <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
     <i class="far fa-star"></i>
     `
-      }
-      else
-  if (data[i].score = "3") {
+    }
+    else
+      if (data[i].score = "3") {
         data[i].score.innerHTML = `
         <i class="fas fa-star"></i>
     <i class="fas fa-star"></i>
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `
       }
       else if (data[i].score = "1") {
-  data[i].score.innerHTML = `
+        data[i].score.innerHTML = `
         <i class="fas fa-star"></i>
         <i class="far fa-star"></i>
         <i class="far fa-star"></i>
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <i class="far fa-star"></i>
     `
       }
-    }
+  }
 
 
   let comments = PRODUCT_INFO_COMMENTS_URL + numeroProd + ".json";
@@ -173,6 +173,22 @@ document.addEventListener("DOMContentLoaded", () => {
         <li class="list-group-item"><strong>${data[3].user}</strong><p>${data[3].dateTime}</p> <p>${data[3].score} </p>  <p>${data[3].description}</p></li>
         
       </ul> 
-        </div>`
+        </div>
+
+
         
-));})
+         <div class="form-group">
+         <h4>Comentar</h4>
+         <textarea class="form-control" rows="5"></textarea> 
+         <label>Puntuación:</label> <br>
+         <input type="number" max="5"> <br>
+         <button type="submit" class="btnComentarios">Enviar</button>
+
+         </div>
+         
+
+        
+        `
+
+      ));
+})
