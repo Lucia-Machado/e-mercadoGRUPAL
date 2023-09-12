@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infocomentarios.innerHTML = `
         <div class="container"> 
           <h4>Comentarios</h4>
-          <ul class="list-group">
+          <ul class="list-group" id="lista1">
             ${data.map((comment) => `
               <li class="list-group-item">
                 <strong>${comment.user}</strong>
@@ -169,5 +169,21 @@ document.addEventListener("DOMContentLoaded", () => {
             `).join('')}
           </ul>
         </div>`;
+
+
     });
-})
+    let botonEnvio = document.getElementById("botonEnvio")
+
+        botonEnvio.addEventListener("click", ()=>{
+          console.log("Envio")
+          
+          const inputTextArea = document.getElementById("textArea").value
+          const puntuacionArea = document.getElementById("puntuacionArea").value
+
+          const nuevoElemento = `<li class="list-group-item"><strong>${contenidoIndex}</strong><p>Hoy</p> <p>${puntuacionArea} </p>  <p>${inputTextArea}</p></li>` 
+
+          let lista1 = document.getElementById("lista1")
+          lista1.innerHTML += nuevoElemento
+        }
+        )
+      })
