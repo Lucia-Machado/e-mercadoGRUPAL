@@ -52,7 +52,7 @@ function showProductsList(array) {
 
 function selectProduct(productId) {
     localStorage.setItem("selectedProduct", productId);
-    window.location.href = "../product-info.html";
+    window.location.href = "product-info.html";
 }
 
 
