@@ -390,3 +390,14 @@ justify-content: center;
 .fa-star {
   color: #F09100;
 }
+
+.comentario1{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnComentarios{
+  background-color: #F09100;
+}

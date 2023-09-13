@@ -4,13 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   emailPersona.innerHTML = `Perfil: ${contenidoIndex}`;
 
   const estrellita1 = document.getElementById("estrellita1");
-
+  let variableeste = 0;
   estrellita1.addEventListener("click", () => {
     estrellita1.classList.add("claseEstrella");
     estrellita2.classList.add("claseEstrellaWhite");
     estrellita3.classList.add("claseEstrellaWhite");
     estrellita4.classList.add("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
+    variableeste = 1
   });
 
   const estrellita2 = document.getElementById("estrellita2");
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.add("claseEstrellaWhite");
     estrellita4.classList.add("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
+    variableeste = 2
   });
   const estrellita3 = document.getElementById("estrellita3");
 
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.remove("claseEstrellaWhite");
     estrellita4.classList.add("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
+    variableeste = 3
   });
 
   const estrellita4 = document.getElementById("estrellita4");
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.remove("claseEstrellaWhite");
     estrellita4.classList.remove("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
+    variableeste = 4
   });
   const estrellita5 = document.getElementById("estrellita5");
 
@@ -60,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.remove("claseEstrellaWhite");
     estrellita4.classList.remove("claseEstrellaWhite");
     estrellita5.classList.remove("claseEstrellaWhite");
+    variableeste = 5
   });
 
   const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
@@ -163,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <li class="list-group-item">
                 <strong>${comment.user}</strong>
                 <p>${comment.dateTime}</p>
-                <p>${calificacion(comment.score)}</p>
+                <p>${calificacion(comment.score || comment.variableeste)}</p> 
                 <p>${comment.description}</p>
               </li>
             `).join('')}
@@ -173,17 +178,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
     let botonEnvio = document.getElementById("botonEnvio")
+    const Fecha = new Date();
+    console.log(Fecha.getDate())
 
         botonEnvio.addEventListener("click", ()=>{
           console.log("Envio")
           
           const inputTextArea = document.getElementById("textArea").value
-          const puntuacionArea = document.getElementById("puntuacionArea").value
+          
+          let año = Fecha.getFullYear()
+          console.log(año)
+          let mes = Fecha.getMonth()+1
+          console.log(mes)
+          let dia = Fecha.getDate()
+          console.log(dia)
 
-          const nuevoElemento = `<li class="list-group-item"><strong>${contenidoIndex}</strong><p>Hoy</p> <p>${puntuacionArea} </p>  <p>${inputTextArea}</p></li>` 
-
+          let hora =Fecha.getHours()
+          let minutos = Fecha.getMinutes()
+          let segundos = Fecha.getSeconds()
+          const nuevoElemento = `<li class="list-group-item"><strong>${contenidoIndex}</strong><p>${año}-${mes}-${dia} ${hora}:${minutos}:${segundos} </p> <p>${calificar(variableeste)} </p> <p>${inputTextArea}</p></li>` 
           let lista1 = document.getElementById("lista1")
           lista1.innerHTML += nuevoElemento
+
+
+          function calificar (area){
+          if (area == "5") {
+            return `
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            `;
+          } else if (area == "4") {
+            return `
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            `;
+          } else if (area == "3") {
+            return `
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            `;
+          } else if (area == "2") {
+            return `
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            `;
+          } else if (area == "1") {
+            return `
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            `;
+          }
         }
-        )
-      })
+
+        
+        
+        
+      })})
