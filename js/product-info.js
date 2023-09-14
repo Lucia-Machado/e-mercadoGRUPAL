@@ -243,6 +243,11 @@ document.addEventListener("DOMContentLoaded", () => {
               <i class="far fa-star"></i>
             `;
           }
+          else if (area == "0") {
+            return `
+              Sin calificación..
+            `;
+          }
         }
 
         
