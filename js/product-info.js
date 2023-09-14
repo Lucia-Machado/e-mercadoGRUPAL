@@ -151,6 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
         `;
+      }else if (score == "0") {
+        return `
+          Sin calificación.
+        `;
       }
       return "Puntuación no válida";
     }
@@ -245,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           else if (area == "0") {
             return `
-              Sin calificación..
+              Sin calificación.
             `;
           }
         }
