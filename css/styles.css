@@ -187,7 +187,10 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-
+/* Boton seleccionar */
+.select{
+  border-radius: 20px;
+}
 /* Formulario */
 .loginb {
   display: block;
@@ -372,7 +375,7 @@ justify-content: center;
 
 .imagenesgas {
   margin: 50px;
-  border: 1px solid #ccc;
+  
   
  
 }
@@ -434,12 +437,11 @@ justify-content: center;
 
 .imagenRela{
   height: 150px;
-  border: #F09100 1px solid;
   justify-content: space-around;
   align-items: center;
 }
 .imagenRela:hover{
-  transition: all 1200ms;
+  transition: all 100ms;
   height: 180px;
 }
 
