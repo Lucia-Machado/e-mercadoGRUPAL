@@ -264,8 +264,8 @@ document.addEventListener("DOMContentLoaded", () => {
         (data) => {
           
             let contenidoDePagRela = document.getElementById("ContenidoProductosRelacionados");
-            contenidoDePagRela.innerHTML = `<img class="imagenRela" src="${data.relatedProducts[0].image}"></img>
-            <img class="imagenRela" src="${data.relatedProducts[1].image}"></img>`
+            contenidoDePagRela.innerHTML = `<div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[0].image}"></img><h5>${data.relatedProducts[0].name}</h5></div>
+            <div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[1].image}"></img> <h5>${data.relatedProducts[1].name}</h5> </div>`
 
           }
           

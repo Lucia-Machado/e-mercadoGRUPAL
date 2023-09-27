@@ -439,7 +439,7 @@ justify-content: center;
   align-items: center;
 }
 .imagenRela:hover{
-  transition: all 1700ms;
+  transition: all 1200ms;
   height: 180px;
 }
 
@@ -454,4 +454,7 @@ justify-content: center;
   justify-content: space-around;
   flex-direction: column;
   margin: 0 auto;
+}
+.imagenReload{
+
 }
