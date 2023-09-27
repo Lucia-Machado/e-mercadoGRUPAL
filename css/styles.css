@@ -455,6 +455,78 @@ justify-content: center;
   flex-direction: column;
   margin: 0 auto;
 }
-.imagenReload{
 
+.bi-sun-fill {
+  color: yellow;
 }
+
+.bi-moon-fill {
+  color: #0087F7;
+}
+
+.rounded-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+/* Estilos para el tema oscuro */
+[data-bs-theme="dark"] {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para todos los enlaces en el tema oscuro */
+[data-bs-theme="dark"] a {
+  color: #fff;
+}
+
+/* Estilos para todos los elementos de formulario (inputs y campos de texto) en el tema oscuro */
+[data-bs-theme="dark"] input,
+[data-bs-theme="dark"] textarea {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* Estilos para los botones en el tema oscuro */
+[data-bs-theme="dark"] .btn {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos para los comentarios y calificaciones en el tema oscuro */
+[data-bs-theme="dark"] #comments,
+[data-bs-theme="dark"] #comments .list-group-item p {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* Estilos para la parte de comentar en el tema oscuro */
+[data-bs-theme="dark"] .form-group {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para el botón de envío en el tema oscuro */
+[data-bs-theme="dark"] #botonEnvio {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos para elementos div en el tema oscuro */
+[data-bs-theme="dark"] div {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para elementos select en el tema oscuro */
+[data-bs-theme="dark"] select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+

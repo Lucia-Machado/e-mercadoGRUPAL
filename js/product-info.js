@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.add("claseEstrellaWhite");
     estrellita4.classList.add("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
-    variableeste = 1
+    variableeste = 1;
   });
 
   const estrellita2 = document.getElementById("estrellita2");
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.add("claseEstrellaWhite");
     estrellita4.classList.add("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
-    variableeste = 2
+    variableeste = 2;
   });
   const estrellita3 = document.getElementById("estrellita3");
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.remove("claseEstrellaWhite");
     estrellita4.classList.add("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
-    variableeste = 3
+    variableeste = 3;
   });
 
   const estrellita4 = document.getElementById("estrellita4");
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.remove("claseEstrellaWhite");
     estrellita4.classList.remove("claseEstrellaWhite");
     estrellita5.classList.add("claseEstrellaWhite");
-    variableeste = 4
+    variableeste = 4;
   });
   const estrellita5 = document.getElementById("estrellita5");
 
@@ -64,23 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
     estrellita3.classList.remove("claseEstrellaWhite");
     estrellita4.classList.remove("claseEstrellaWhite");
     estrellita5.classList.remove("claseEstrellaWhite");
-    variableeste = 5
+    variableeste = 5;
   });
 
   const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
 
   const numeroProd = localStorage.getItem("selectedProduct");
   const content = PRODUCT_INFO_URL + numeroProd + ".json";
-  console.log(content)
+  console.log(content);
   var contenidoDePag = document.getElementById("contenidoDePag");
   fetch(content)
     .then((response) => response.json())
     .then(
       (data) =>
-      (
-        
-        
-        contenidoDePag.innerHTML = `
+        (contenidoDePag.innerHTML = `
                 
         <div>
         <h1 class="contenedor1">${data.name}</h1>
@@ -108,172 +105,162 @@ document.addEventListener("DOMContentLoaded", () => {
               
         </div>
         </div>
-        `
-      )
+        `)
     );
 
-    function calificacion(score) {
-      if (score == "5") {
-        return `
+  function calificacion(score) {
+    if (score == "5") {
+      return `
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         `;
-      } else if (score == "4") {
-        return `
+    } else if (score == "4") {
+      return `
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="far fa-star"></i>
         `;
-      } else if (score == "3") {
-        return `
+    } else if (score == "3") {
+      return `
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
         `;
-      } else if (score == "2") {
-        return `
+    } else if (score == "2") {
+      return `
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
         `;
-      } else if (score == "1") {
-        return `
+    } else if (score == "1") {
+      return `
           <i class="fas fa-star"></i>
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
         `;
-      }else if (score == "0") {
-        return `
+    } else if (score == "0") {
+      return `
           Sin calificación.
         `;
-      }
-      return "Puntuación no válida";
     }
-  
-    let comments = PRODUCT_INFO_COMMENTS_URL + numeroProd + ".json";
-    let infocomentarios = document.querySelector("#comments");
-    fetch(comments)
+    return "Puntuación no válida";
+  }
+
+  let comments = PRODUCT_INFO_COMMENTS_URL + numeroProd + ".json";
+  let infocomentarios = document.querySelector("#comments");
+  fetch(comments)
     .then((response) => response.json())
     .then((data) => {
       infocomentarios.innerHTML = `
         <div class="container"> 
           <h4>Comentarios</h4>
           <ul class="list-group" id="lista1">
-            ${data.map((comment) => `
+            ${data
+              .map(
+                (comment) => `
               <li class="list-group-item">
                 <strong>${comment.user}</strong>
                 <p>${comment.dateTime}</p>
                 <p>${calificacion(comment.score || comment.variableeste)}</p> 
                 <p>${comment.description}</p>
               </li>
-            `).join('')}
+            `
+              )
+              .join("")}
           </ul>
         </div>`;
-
-
     });
-    let botonEnvio = document.getElementById("botonEnvio")
-    const Fecha = new Date();
-    console.log(Fecha.getDate())
+  let botonEnvio = document.getElementById("botonEnvio");
+  const Fecha = new Date();
+  console.log(Fecha.getDate());
 
-        botonEnvio.addEventListener("click", ()=>{
-          console.log("Envio")
-          
-          const inputTextArea = document.getElementById("textArea").value
-          
-          let año = Fecha.getFullYear()
-          console.log(año)
-          let mes = Fecha.getMonth()+1
-          console.log(mes)
-          let dia = Fecha.getDate()
-          console.log(dia)
+  botonEnvio.addEventListener("click", () => {
+    console.log("Envio");
 
-          let hora =Fecha.getHours()
-          let minutos = Fecha.getMinutes()
-          let segundos = Fecha.getSeconds()
-          const nuevoElemento = `<li class="list-group-item"><strong>${contenidoIndex}</strong><p>${año}-${mes}-${dia} ${hora}:${minutos}:${segundos} </p> <p>${calificar(variableeste)} </p> <p>${inputTextArea}</p></li>` 
-          let lista1 = document.getElementById("lista1")
-          lista1.innerHTML += nuevoElemento
+    const inputTextArea = document.getElementById("textArea").value;
 
+    let año = Fecha.getFullYear();
+    console.log(año);
+    let mes = Fecha.getMonth() + 1;
+    console.log(mes);
+    let dia = Fecha.getDate();
+    console.log(dia);
 
-          function calificar (area){
-          if (area == "5") {
-            return `
+    let hora = Fecha.getHours();
+    let minutos = Fecha.getMinutes();
+    let segundos = Fecha.getSeconds();
+    const nuevoElemento = `<li class="list-group-item"><strong>${contenidoIndex}</strong><p>${año}-${mes}-${dia} ${hora}:${minutos}:${segundos} </p> <p>${calificar(
+      variableeste
+    )} </p> <p>${inputTextArea}</p></li>`;
+    let lista1 = document.getElementById("lista1");
+    lista1.innerHTML += nuevoElemento;
+
+    function calificar(area) {
+      if (area == "5") {
+        return `
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             `;
-          } else if (area == "4") {
-            return `
+      } else if (area == "4") {
+        return `
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
             `;
-          } else if (area == "3") {
-            return `
+      } else if (area == "3") {
+        return `
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
             `;
-          } else if (area == "2") {
-            return `
+      } else if (area == "2") {
+        return `
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
             `;
-          } else if (area == "1") {
-            return `
+      } else if (area == "1") {
+        return `
               <i class="fas fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
               <i class="far fa-star"></i>
             `;
-          }
-          else if (area == "0") {
-            return `
+      } else if (area == "0") {
+        return `
               Sin calificación.
             `;
-          }
-        }
       }
-        
-        )
-      fetch(content)
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          
-            let contenidoDePagRela = document.getElementById("ContenidoProductosRelacionados");
-            contenidoDePagRela.innerHTML = `<div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[0].image}"></img><h5>${data.relatedProducts[0].name}</h5></div>
-            <div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[1].image}"></img> <h5>${data.relatedProducts[1].name}</h5> </div>`
-
-          }
-          
-        
-        
-      
-    );
-        
-      
-    
-    })
+    }
+  });
+  fetch(content)
+    .then((response) => response.json())
+    .then((data) => {
+      let contenidoDePagRela = document.getElementById(
+        "ContenidoProductosRelacionados"
+      );
+      contenidoDePagRela.innerHTML = `<div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[0].image}"></img><h5>${data.relatedProducts[0].name}</h5></div>
+            <div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[1].image}"></img> <h5>${data.relatedProducts[1].name}</h5> </div>`;
+    });
+});
