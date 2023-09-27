@@ -241,6 +241,32 @@ nav ul li a:hover  {
   color: #F09100 !important;
   transform: scale(1.2, 1.2);
 }
+.nav-item:hover ul {
+  display: block;
+}
+
+.nav-item ul {
+  display: none;
+  position: absolute;
+  background-color: #212529;
+  padding-bottom: 15px;
+  list-style: none;
+  z-index: 1; 
+  width: 411px;
+  border-radius: 5px;
+  
+}
+.nav-item ul li {
+  margin-bottom: 5px;
+}
+.nav-item ul li a {
+  color: #fff; 
+  text-decoration: none;
+}
+.nav-item ul li a:hover {
+  background-color: #333;
+}
+
 
 /* Estilos Categorias */ 
 #muebles:hover{
