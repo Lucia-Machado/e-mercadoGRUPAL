@@ -401,3 +401,31 @@ justify-content: center;
 .btnComentarios{
   background-color: #F09100;
 }
+
+#ContenidoProductosRelacionados{
+  margin-bottom: 100px;
+}
+
+.imagenRela{
+  height: 150px;
+  border: #F09100 1px solid;
+  justify-content: space-around;
+  align-items: center;
+}
+.imagenRela:hover{
+  transition: all 1700ms;
+  height: 180px;
+}
+
+#ContenidoProductosRelacionados{
+  width: 90%;
+  display: flex;
+}
+
+#ContenidoProductosRelacionados > img{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 0 auto;
+}

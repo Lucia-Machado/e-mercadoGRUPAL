@@ -71,13 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const numeroProd = localStorage.getItem("selectedProduct");
   const content = PRODUCT_INFO_URL + numeroProd + ".json";
+  console.log(content)
   var contenidoDePag = document.getElementById("contenidoDePag");
   fetch(content)
     .then((response) => response.json())
     .then(
       (data) =>
       (
-
+        
+        
         contenidoDePag.innerHTML = `
                 
         <div>
@@ -103,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="imagenesgas">
         <img src="${data.images[3]}"></img>
         </div>
-                
+              
         </div>
         </div>
         `
@@ -253,8 +255,25 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
           }
         }
+      }
+        
+        )
+      fetch(content)
+      .then((response) => response.json())
+      .then(
+        (data) => {
+          
+            let contenidoDePagRela = document.getElementById("ContenidoProductosRelacionados");
+            contenidoDePagRela.innerHTML = `<img class="imagenRela" src="${data.relatedProducts[0].image}"></img>
+            <img class="imagenRela" src="${data.relatedProducts[1].image}"></img>`
 
+          }
+          
         
         
+      
+    );
         
-      })})
+      
+    
+    })
