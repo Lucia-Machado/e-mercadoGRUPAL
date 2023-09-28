@@ -281,8 +281,8 @@ document.addEventListener("DOMContentLoaded", () => {
         location.reload()
         window.location.hash = "#ubicar"
       }
-      contenidoDePagRela.innerHTML = `<button id="botonHandleClick"><div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[0].image}"></img><h5>${data.relatedProducts[0].name}</h5></div></button>
-                                      <button id="botonHandleClick1"><div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[1].image}"></img><h5>${data.relatedProducts[1].name}</h5></div></button>`;
+      contenidoDePagRela.innerHTML = `<button class="botin" id="botonHandleClick"><div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[0].image}"></img><h5>${data.relatedProducts[0].name}</h5></div></button>
+                                      <button class="botin" id="botonHandleClick1"><div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[1].image}"></img><h5>${data.relatedProducts[1].name}</h5></div></button>`;
 
                                       const botonHandleClick = document.getElementById("botonHandleClick")
                                       botonHandleClick.addEventListener("click", handleClick)
