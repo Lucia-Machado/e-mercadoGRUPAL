@@ -73,43 +73,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = PRODUCT_INFO_URL + numeroProd + ".json";
   console.log(content);
   var contenidoDePag = document.getElementById("contenidoDePag");
-  function cargar (param){
-    fetch(param)
-      .then((response) => response.json())
-      .then(
-        (data) =>
-          (contenidoDePag.innerHTML = `
-                  
-          <div>
-          <h1 class="contenedor1" id="ubicar">${data.name}</h1>
-          <hr />
-                  
-          <p class="cat1">Precio:<p>${data.currency} ${data.cost}</p>
-          <p class="cat1">Descripción:</p><p>${data.description}</p>
-          <p class="cat1">Categoría:</p><p>${data.category}</p>
-          <p class="cat1">Cantidad vendidos:</p><p>${data.soldCount}</p>
-          <p class="cat1">Imágenes: </p>
-  
-          <div class="galeria">
-          <div class="imagenesgas">
-          <img src="${data.images[0]}"></img>
-          </div>
-          <div class="imagenesgas">
-          <img src="${data.images[1]}"></img>
-          </div>
-          <div class="imagenesgas">
-          <img src="${data.images[2]}"></img>
-          </div>
-          <div class="imagenesgas">
-          <img src="${data.images[3]}"></img>
-          </div>
+  fetch(content)
+    .then((response) => response.json())
+    .then(
+      (data) =>
+        (contenidoDePag.innerHTML = `
                 
-          </div>
-          </div>
-          `)
-      );
-  }
- cargar(content)
+        <div>
+        <h1 class="contenedor1">${data.name}</h1>
+        <hr />
+                
+        <p class="cat1">Precio:<p>${data.currency} ${data.cost}</p>
+        <p class="cat1">Descripción:</p><p>${data.description}</p>
+        <p class="cat1">Categoría:</p><p>${data.category}</p>
+        <p class="cat1">Cantidad vendidos:</p><p>${data.soldCount}</p>
+        <p class="cat1">Imágenes: </p>
+
+        <div class="galeria">
+        <div class="imagenesgas">
+        <img src="${data.images[0]}"></img>
+        </div>
+        <div class="imagenesgas">
+        <img src="${data.images[1]}"></img>
+        </div>
+        <div class="imagenesgas">
+        <img src="${data.images[2]}"></img>
+        </div>
+        <div class="imagenesgas">
+        <img src="${data.images[3]}"></img>
+        </div>
+              
+        </div>
+        </div>
+        `)
+    );
+
   function calificacion(score) {
     if (score == "5") {
       return `
