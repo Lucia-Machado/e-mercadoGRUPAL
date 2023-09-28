@@ -171,9 +171,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 (comment) => `
               <li class="list-group-item">
                 <strong>${comment.user}</strong>
-                <p>${comment.dateTime}</p>
-                <p>${calificacion(comment.score || comment.variableeste)}</p> 
-                <p>${comment.description}</p>
+                <p class="comments-products-theme-black">${comment.dateTime}</p>
+                <p class="comments-products-theme-black">${calificacion(comment.score || comment.variableeste)}</p> 
+                <p class="comments-products-theme-black">${comment.description}</p>
               </li>
             `
               )

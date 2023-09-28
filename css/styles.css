@@ -499,11 +499,15 @@ justify-content: center;
 }
 
 /* Estilos para los comentarios y calificaciones en el tema oscuro */
-[data-bs-theme="dark"] #comments,
+
 [data-bs-theme="dark"] #comments .list-group-item p {
   background-color: #111;
   color: #fff;
-  border: 1px solid #333;
+  border: none;
+}
+
+[data-bs-theme="dark"] #comments .comments-products-theme-black {
+  background-color: black !important;
 }
 
 /* Estilos para la parte de comentar en el tema oscuro */
@@ -531,6 +535,53 @@ justify-content: center;
   border: 1px solid #333;
 }
 
+/* Estilos para elementos ul en el tema oscuro */
+[data-bs-theme="dark"] ul li {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* Estilos del nav en tema oscuro */
+[data-bs-theme="dark"] .nav-item {
+  background-color: #333; 
+}
+
+[data-bs-theme="dark"] nav {
+  background-color: #333 !important;
+}
+
+[data-bs-theme="dark"] .navbar-nav {
+  background-color: #333;
+}
+
+[data-bs-theme="dark"] .container-nav {
+  background-color: #333;
+}
+
+[data-bs-theme="dark"] .ulchico {
+  background-color: #333;
+}
+
+[data-bs-theme="dark"] .lichico {
+  background-color: #333;
+}
+ /* Estilos del footer en tema oscuro*/
+ [data-bs-theme="dark"] .container-foot {
+  background-color: #212529;
+}
+
+[data-bs-theme="dark"] #rangeFilterCount {
+  border: none;
+}
+
+[data-bs-theme="dark"] .dz-clickable {
+  background-color: #333333 !important;
+}
+
+[data-bs-theme="dark"] .needsclick {
+  background-color: #333333 !important;
+}
 
 .ulchico{
   width: 285px !important;
