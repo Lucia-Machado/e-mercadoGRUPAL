@@ -73,41 +73,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = PRODUCT_INFO_URL + numeroProd + ".json";
   console.log(content);
   var contenidoDePag = document.getElementById("contenidoDePag");
-  fetch(content)
-    .then((response) => response.json())
-    .then(
-      (data) =>
-        (contenidoDePag.innerHTML = `
+  function cargar (param){
+    fetch(param)
+      .then((response) => response.json())
+      .then(
+        (data) =>
+          (contenidoDePag.innerHTML = `
+                  
+          <div>
+          <h1 class="contenedor1" id="ubicar">${data.name}</h1>
+          <hr />
+                  
+          <p class="cat1">Precio:<p>${data.currency} ${data.cost}</p>
+          <p class="cat1">Descripción:</p><p>${data.description}</p>
+          <p class="cat1">Categoría:</p><p>${data.category}</p>
+          <p class="cat1">Cantidad vendidos:</p><p>${data.soldCount}</p>
+          <p class="cat1">Imágenes: </p>
+  
+          <div class="galeria">
+          <div class="imagenesgas">
+          <img src="${data.images[0]}"></img>
+          </div>
+          <div class="imagenesgas">
+          <img src="${data.images[1]}"></img>
+          </div>
+          <div class="imagenesgas">
+          <img src="${data.images[2]}"></img>
+          </div>
+          <div class="imagenesgas">
+          <img src="${data.images[3]}"></img>
+          </div>
                 
-        <div>
-        <h1 class="contenedor1">${data.name}</h1>
-        <hr />
-                
-        <p class="cat1">Precio:<p>${data.currency} ${data.cost}</p>
-        <p class="cat1">Descripción:</p><p>${data.description}</p>
-        <p class="cat1">Categoría:</p><p>${data.category}</p>
-        <p class="cat1">Cantidad vendidos:</p><p>${data.soldCount}</p>
-        <p class="cat1">Imágenes: </p>
-
-        <div class="galeria">
-        <div class="imagenesgas">
-        <img src="${data.images[0]}"></img>
-        </div>
-        <div class="imagenesgas">
-        <img src="${data.images[1]}"></img>
-        </div>
-        <div class="imagenesgas">
-        <img src="${data.images[2]}"></img>
-        </div>
-        <div class="imagenesgas">
-        <img src="${data.images[3]}"></img>
-        </div>
-              
-        </div>
-        </div>
-        `)
-    );
-
+          </div>
+          </div>
+          `)
+      );
+  }
+ cargar(content)
   function calificacion(score) {
     if (score == "5") {
       return `
@@ -254,13 +256,42 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+  function selectProduct(productId) {
+    localStorage.setItem("selectedProduct", productId);
+    window.location.href = "product-info.html";
+  }
   fetch(content)
-    .then((response) => response.json())
-    .then((data) => {
-      let contenidoDePagRela = document.getElementById(
-        "ContenidoProductosRelacionados"
+  .then((response) => response.json())
+  .then((data) => {
+    let contenidoDePagRela = document.getElementById(
+      "ContenidoProductosRelacionados"
       );
-      contenidoDePagRela.innerHTML = `<div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[0].image}"></img><h5>${data.relatedProducts[0].name}</h5></div>
-            <div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[1].image}"></img> <h5>${data.relatedProducts[1].name}</h5> </div>`;
-    });
+      // let commentsNew1 = PRODUCT_INFO_COMMENTS_URL + data.relatedProducts[0].id + ".json"
+      // console.log(localStorage.setItem("selectedProduct", data.relatedProducts[0].id))
+      // console.log(localStorage.setItem("selectedProduct", data.relatedProducts[1].id))
+      // const contento = localStorage.getItem("selectedProduct", data.relatedProducts[0].id ) 
+      // const contento1 = localStorage.getItem("selectedProduct", data.relatedProducts[1].id ) 
+      // console.log(localStorage.setItem("selectedProduct", data.relatedProducts[0].id))
+
+      function handleClick (){
+        localStorage.setItem("selectedProduct", data.relatedProducts[0].id)
+        location.reload()
+        window.location.hash = "#ubicar"
+      }
+      function handleClick1 (){
+        localStorage.setItem("selectedProduct", data.relatedProducts[1].id)
+        location.reload()
+        window.location.hash = "#ubicar"
+      }
+      contenidoDePagRela.innerHTML = `<button id="botonHandleClick"><div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[0].image}"></img><h5>${data.relatedProducts[0].name}</h5></div></button>
+                                      <button id="botonHandleClick1"><div class="imagenReload"><img class="imagenRela" src="${data.relatedProducts[1].image}"></img><h5>${data.relatedProducts[1].name}</h5></div></button>`;
+
+                                      const botonHandleClick = document.getElementById("botonHandleClick")
+                                      botonHandleClick.addEventListener("click", handleClick)
+
+                                      const botonHandleClick1 = document.getElementById("botonHandleClick1")
+                                      botonHandleClick1.addEventListener("click", handleClick1)
+                                      
+                                      
+                                    });
 });
