@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (contenidoDePag.innerHTML = `
                 
         <div>
-        <h1 class="contenedor1">${data.name}</h1>
+        <h1 class="contenedor1" id="ubicar">${data.name}</h1>
         <hr />
                 
         <p class="cat1">Precio:<p>${data.currency} ${data.cost}</p>
