@@ -42,7 +42,7 @@ function showProductsList(array) {
                     <p>${product.description}</p>
                     <p>Precio: ${product.cost} ${product.currency}</p>
                     <p>Vendidos: ${product.soldCount}</p>
-                    <button onclick="selectProduct(${product.id})">Seleccionar</button>
+                    <button class="select" onclick="selectProduct(${product.id})">Seleccionar</button>
                 </div>
             </div>`;
     }
