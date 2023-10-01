@@ -588,7 +588,83 @@ justify-content: center;
 [data-bs-theme="dark"] .needsclick {
   background-color: #333333 !important;
 }
+/* Estrella */
+[data-bs-theme="dark"] .estrellita:hover {
+  background-color: #F09100;
+  color: #fff;
+}
+[data-bs-theme="dark"] .estrellitas{
+  color: #F09100;
+  text-align: center;
+}
+[data-bs-theme="dark"] .imgCompleta{
+  color: #F09100;
+}
+[data-bs-theme="dark"] .imgNoCompleta{
+  color: #F09100;
+}
 
+[data-bs-theme="dark"] .claseEstrella{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita1:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita2:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita3:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita4:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita5:hover{
+  background-color: #F09100;
+}
+
+
+
+[data-bs-theme="dark"] .claseEstrellaWhite{
+  background-color: #333333;
+}
+
+[data-bs-theme="dark"] #idcat1{
+  background-color: #333333;
+  border-radius: 10px 0px 0px 10px;
+}
+[data-bs-theme="dark"] .contenedorCat{
+  
+  margin: 0px;
+  padding: 0px;
+}
+[data-bs-theme="dark"] .cursor-active{
+  background-color: #585757;
+  margin: 3px;
+  padding: 0px;
+}
+
+[data-bs-theme="dark"] #contenedorCat:hover{
+  
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+[data-bs-theme="dark"] .cursor-active:hover{
+  background-color: #333333;
+  border-radius: 20px;
+}
+[data-bs-theme="dark"] #colorfondocat{
+  background-color: #333333;
+  border: 1px solid #333333 ;
+}
+
+[data-bs-theme="dark"] #idcat2{
+  background-color: #333333;
+  border-radius:0px 10px 10px 0px;
+}
 .ulchico{
   width: 285px !important;
 }
@@ -603,4 +679,16 @@ justify-content: center;
 .botin{
   border: none;
   background-color: white;
+}
+
+[data-bs-theme="dark"] .cardproduct{
+  background-color: #333333;
+  border: none;
+  border-radius: none;
+}
+[data-bs-theme="dark"] .cardproduct1{
+  background-color: #585757;
+}
+[data-bs-theme="dark"] .cardproduct1:hover{
+  background-color: #858383;
 }
