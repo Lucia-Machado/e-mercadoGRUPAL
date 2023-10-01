@@ -706,10 +706,9 @@ justify-content: center;
 }
 
 [data-bs-theme="dark"] .container{
-  padding: 0px;
-  background-color: #585757 ;
-  
+  padding: 0px;  
 }
+
 [data-bs-theme="dark"] .muchomas{
   border: none;
   background-color: #585757;;
