@@ -279,14 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let contenidoDePagRela = document.getElementById(
       "ContenidoProductosRelacionados"
       );
-      // let commentsNew1 = PRODUCT_INFO_COMMENTS_URL + data.relatedProducts[0].id + ".json"
-      // console.log(localStorage.setItem("selectedProduct", data.relatedProducts[0].id))
-      // console.log(localStorage.setItem("selectedProduct", data.relatedProducts[1].id))
-      // const contento = localStorage.getItem("selectedProduct", data.relatedProducts[0].id ) 
-      // const contento1 = localStorage.getItem("selectedProduct", data.relatedProducts[1].id ) 
-      // console.log(localStorage.setItem("selectedProduct", data.relatedProducts[0].id))
-
-      function handleClick (){
+       function handleClick (){
         localStorage.setItem("selectedProduct", data.relatedProducts[0].id)
         location.reload()
         window.location.hash = "#ubicar"
