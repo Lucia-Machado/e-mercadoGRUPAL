@@ -692,3 +692,48 @@ justify-content: center;
 [data-bs-theme="dark"] .cardproduct1:hover{
   background-color: #858383;
 }
+
+[data-bs-theme="dark"] .album{
+  background-color: black;
+}
+[data-bs-theme="dark"] .ulchico > li{
+  background-color: #333333;
+}
+.container{
+  padding: 0px;
+
+
+}
+
+[data-bs-theme="dark"] .container{
+  padding: 0px;
+  background-color: #585757 ;
+  
+}
+[data-bs-theme="dark"] .muchomas{
+  border: none;
+  background-color: #585757;;
+}
+[data-bs-theme="dark"] #dataCont {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+[data-bs-theme="dark"] .parrafoAbajo {
+  opacity: 1;
+  background-color: #212529;
+}
+[data-bs-theme="dark"] body{
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-bs-theme="dark"] .jumbotron {
+  
+  background-color: #53C0FB;
+  background: url('../img/image_cover_dark.png');
+  opacity: 1 !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  
