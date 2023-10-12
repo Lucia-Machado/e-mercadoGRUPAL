@@ -738,3 +738,12 @@ justify-content: center;
 [data-bs-theme="dark"]  .container-foot{
   background-color: #212529;
 }
+
+.contenedorCarritoTitle{
+  padding: 0px !important;
+  margin: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
