@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
         const carrito = document.getElementById("agregarCarrito")
         carrito.addEventListener("click", ()=>{
-            
+            alert("Producto Seleccionado!!")
           let arrayActual = JSON.parse(localStorage.getItem('carrito')) || [];
             var nuevoElemento = data;
             arrayActual.push(nuevoElemento);
