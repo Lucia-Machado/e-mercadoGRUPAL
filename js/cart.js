@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("carrito")
       let carrito2 = document.getElementById("lista2");
       carrito2.innerHTML = ` `
+      let carritoCont = document.getElementById("lista");
+      carritoCont.innerHTML = ` `
     })
   
 })
