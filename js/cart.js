@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <td><input type="number" id="inputCarrito" min="0" value="1" class="cant" onchange="recalcular();"></td>
     <td id="ress">${productocompra.articles[0].currency} <span class="res">${productocompra.articles[0].unitCost}</span></td></tr>
     `
-    const carrito2 = document.getElementById("lista2");
+    let carrito2 = document.getElementById("lista2");
     carrito.map((el)=>{
     carrito2.innerHTML += `
     <tr><td><img src=${el.images[0]} width="100px"></img></td>
@@ -49,6 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
       recalcular();
     });
 
+
+    const limpiar = document.getElementById("limpiarProd")
+
+    limpiar.addEventListener("click", ()=>{
+      localStorage.removeItem("carrito")
+      let carrito2 = document.getElementById("lista2");
+      carrito2.innerHTML = ` `
+    })
   
 })
 

@@ -14,7 +14,11 @@
 .jumbotron .display-4 {
   font-weight: bold;
 }
-
+.agruparBtn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 nav a {
   text-decoration: none;
 }
