@@ -22,13 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(URL)
     .then((response) => response.json())
     .then((productocompra) => {
-
       carritoCont.innerHTML += `
-    <tr><td><img src=${productocompra.articles[0].image} width="70px"></img></td>'
-    <td>${productocompra.articles[0].name} </td>
+    <tr><td><img src=${productocompra.articles[0].image} width="100px"></img></td>
+    <td id="nombreCarrito">${productocompra.articles[0].name} </td>
     <td>${productocompra.articles[0].currency}<span class="precio"> ${productocompra.articles[0].unitCost}</span></td>
-    <td><input type="number" value="1" class="cant" onchange="recalcular();"></td>
-    <td>${productocompra.articles[0].currency} <span class="res">${productocompra.articles[0].unitCost}</span></td></tr>`;
+    <td><input type="number" id="inputCarrito" min="0" value="1" class="cant" onchange="recalcular();"></td>
+    <td id="ress">${productocompra.articles[0].currency} <span class="res">${productocompra.articles[0].unitCost}</span></td></tr>`;
     
       recalcular();
     });

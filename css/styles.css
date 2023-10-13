@@ -783,3 +783,26 @@ h4 {
   font-size: 25px;
   color: #333;
 }
+thead tr th{
+  padding-left: 30px;
+}
+#costoTh{
+  padding-left: 55px;
+}
+#inputCarrito{
+  width: 80px;
+  margin-left: 30px ;
+}
+#nombreCarrito{
+ padding-left: 20px;
+}
+.precio{
+  padding-left: 15px;
+}
+#ress{
+  font-weight: bold;
+  padding-left: 20px;
+}
+.res{
+  font-weight: bold;
+}
