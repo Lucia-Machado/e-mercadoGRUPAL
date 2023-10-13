@@ -131,12 +131,18 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
         `
         )
-      const carrito = document.getElementById("agregarCarrito")
-      carrito.addEventListener("click", ()=>{
-          console.log("agregando")
-          localStorage.setItem("carrito", JSON.stringify(data))
-        
-      })
+      
+        const carrito = document.getElementById("agregarCarrito")
+        carrito.addEventListener("click", ()=>{
+            
+          let arrayActual = JSON.parse(localStorage.getItem('carrito')) || [];
+            var nuevoElemento = data;
+            arrayActual.push(nuevoElemento);
+
+            localStorage.setItem('carrito', JSON.stringify(arrayActual));
+            
+            console.log('Array actualizado en localStorage:', arrayActual);
+        })
       }
         );
         
