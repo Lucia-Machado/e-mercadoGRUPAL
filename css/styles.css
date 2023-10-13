@@ -45,12 +45,25 @@ nav a {
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
+  display: none;
 }
 
-@media (min-width: 768px) {
+main{
+  padding: 6px;
+}
+
+.login-cellphone{
+  width: 98%;
+}
+
+@media (min-width: 1100px) {  
   .jumbotron {
     padding-top: 6rem;
     padding-bottom: 6rem;
+    display: grid !important;
+  }
+  .login-cellphone{
+    display: none;
   }
 }
 
@@ -290,10 +303,13 @@ footer {        /* Mirarlo en la proxima reunion */
   background-color: #212529; 
   color: #fff; 
   padding: 10px 0; 
+  height: 2.5rem;
 }
 footer p {
   color: white;
   margin-bottom: .25rem;
+  font-size: smaller;
+  padding: 7px;
 }
 footer a{
   color: #F09100;
