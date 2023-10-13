@@ -222,6 +222,18 @@ a.custom-card:hover {
   text-align: center;
 }
 
+@media (max-width: 530px) {
+  .loginb{
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    margin: 7px;
+  }
+  
+}
+
 /* CARD DE LOS PRODUCTOS */
 .product-card {
   display: flex;
