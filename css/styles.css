@@ -235,7 +235,6 @@ a.custom-card:hover {
     flex-direction: column;
     margin: 7px;
   }
-  
 }
 
 /* CARD DE LOS PRODUCTOS */
@@ -320,6 +319,7 @@ footer {        /* Mirarlo en la proxima reunion */
   color: #fff; 
   padding: 10px 0; 
   height: 2.5rem;
+  z-index: 1000 !important;
 }
 footer p {
   color: white;
@@ -475,11 +475,6 @@ justify-content: center;
 .imagenRela:hover{
   transition: all 100ms;
   height: 180px;
-}
-
-#ContenidoProductosRelacionados{
-  width: 90%;
-  display: flex;
 }
 
 #ContenidoProductosRelacionados > img{
@@ -659,6 +654,32 @@ justify-content: center;
 
 [data-bs-theme="dark"] .claseEstrellaWhite{
   background-color: #333333;
+}
+
+.form-group{
+  width: 100%;
+  margin-left: 0%;
+  padding: 0.5em;
+}
+
+.comment-title{
+  text-align: center;
+}
+
+@media (min-width: 568px) {
+  .form-group textarea{
+    width: 60%;
+    margin-left: 20%;
+  }
+  #ContenidoProductosRelacionados{
+    display: flex !important;
+    width: 100%;
+    justify-content: center !important;
+  }
+}
+
+#ContenidoProductosRelacionados{
+  display: grid;
 }
 
 [data-bs-theme="dark"] #idcat1{
