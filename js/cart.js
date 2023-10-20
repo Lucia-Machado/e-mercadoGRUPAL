@@ -41,7 +41,8 @@ function renderizarCarrito() {
 };
 function eliminarDelCarrito(id) {
   let carritoD = carrito.filter(elem => elem.id != id)
-  localStorage.removeItem(carritoD)
+  console.log("CXKLnds")
+  localStorage.setItem("carrito", JSON.stringify(carritoD))
   carrito = carritoD
   renderizarCarrito();
 }
@@ -60,8 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(URL)
     .then((response) => response.json())
     .then((productocompra) => {
-
-      
       carritoCont.innerHTML += `
     <tr><td><img src=${productocompra.articles[0].image} width="100px"></img></td>
     <td id="nombreCarrito">${productocompra.articles[0].name} </td>
