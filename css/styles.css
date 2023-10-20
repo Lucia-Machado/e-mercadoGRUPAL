@@ -928,3 +928,12 @@ thead tr th{
 .res{
   font-weight: bold;
 }
+#containerCostos{
+  margin-left: 17.8em;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#clearfix{
+  padding-bottom: 50px;
+}
