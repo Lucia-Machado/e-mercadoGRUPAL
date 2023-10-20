@@ -35,7 +35,7 @@
       </div>
     </div>
   </nav>
-  <main>
+  <main class="ms-5 me-5">
     <div class="container">
         <div id="contenedorCarrito"><div class="agruparBtn"><h3>Contenido Agregado: </h3><button id="limpiarProd" class="btn btn-danger">Limpiar Productos</button></div>
           <table>
@@ -101,6 +101,57 @@
 
     </div>
     <p id="clearfix"></p>
+    </div>
+
+    <div class="ms-5 me-5" >
+      <hr>
+      <h3>Forma de pago</h3>
+      <p>No ha seleccionado <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Seleccionar</a></p>
+    <hr class="mb-5">
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Forma de pago</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label text-secondary" for="flexRadioDefault1">
+          Tarjeta de crédito
+        </label>
+
+        <hr>
+        
+        <label class="form-label text-secondary">Número de tarjeta</label>
+        <input type="text" maxlength="16" class="form-control">
+
+
+        <label class="form-label text-secondary">Código de seg.</label>
+        <input type="text" maxlength="3" class="form-control">
+
+        <label class="form-label text-secondary">Vencimiento (MM/AA)</label>
+        <input type="month" class="form-control mb-3">
+
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label text-secondary" for="flexRadioDefault1">
+          Transferencia bancaria
+        </label>
+
+        <hr>
+
+        <label class="form-label text-secondary">Número de cuenta</label>
+        <input type="text" maxlength="12" class="form-control">
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </main>
   <footer class="text-muted">
