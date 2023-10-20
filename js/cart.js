@@ -8,9 +8,18 @@ function recalcular() {
     total = parseFloat (parseFloat(cantidades[i].value) * parseFloat((precios[i].innerHTML))).toFixed(2);
     resultados[i].innerHTML = parseFloat(parseFloat(cantidades[i].value) * parseFloat(precios[i].innerHTML)).toFixed(2);
   }
-  
-  document.getElementById("total").innerHTML = "$ " + total;
+   
+  let totales = document.getElementsByClassName("res");
+  var totalprod = 0;
+  console.log(typeof totalprod)
+  for (let i = 0; i < totales.length; i++) {
+    totalprod += parseFloat(totales[i].innerHTML);
+    console.log(typeof totalprod) 
+  }
+  document.getElementById("subtotal").innerHTML = "$ " + totalprod.toFixed(2);
 }
+
+
 
 let carrito2 = document.getElementById("lista2");
 function renderizarCarrito() {
