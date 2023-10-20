@@ -929,10 +929,15 @@ thead tr th{
   font-weight: bold;
 }
 #containerCostos{
-  margin-left: 17.8em;
-  width: 40%;
-  border: 1px solid black;
+  margin-left: 15%; 
+  margin-right: 15%; 
+  border: 1px solid rgb(151, 151, 151);
   border-radius: 5px;
+}
+#centrarh5{
+margin-top: 5px;
+margin-bottom: 5px;
+
 }
 #clearfix{
   padding-bottom: 50px;
