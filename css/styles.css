@@ -942,3 +942,13 @@ margin-bottom: 5px;
 #clearfix{
   padding-bottom: 50px;
 }
+input[type="button"] {
+  margin-left: 25%;
+  width: 50%;
+  height: 50px;
+  color: white;
+  background-color: #0D6EFD;
+  border-color: #0D6EFD;
+  border-radius: 5px;
+
+}
