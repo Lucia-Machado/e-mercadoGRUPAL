@@ -229,12 +229,15 @@ if (!envioseleccionado) {
 if (cantidades) {
   alert("Por favor, revisa las cantidades de tus productos.");
 }
-if (!pagoseleccionado && pago.length > 1) {
+if (!pagoseleccionado && formadepago.length > 1) {
   alert("Por favor, selecciona una forma de pago.");
 }
 if ((pagotarjetaCredito.checked && (numerotarjeta === "" || codigoseguridad === "" || vencimientotarjeta === "")) || ((pagoTransferencia.checked) && numerocuenta === "")) {
   alert("Por favor, revisa los datos de pago.");
 }
-else { alert("Compra ingresada correctamente.")
+else { 
+  
+  alert("Compra ingresada correctamente.")
+
 }
 })
