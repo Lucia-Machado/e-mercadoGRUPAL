@@ -82,7 +82,10 @@ function renderizarCarrito() {
 
 };
 function eliminarDelCarrito(id) {
-  let carritoD = carrito.filter(elem => elem.id != id)
+  
+
+
+  let carritoD = carrito.filter(elem => elem.id !== id++)
   console.log("CXKLnds")
   localStorage.setItem("carrito", JSON.stringify(carritoD))
   carrito = carritoD
@@ -111,7 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
     <td id="ress">${productocompra.articles[0].currency} <span class="res">${productocompra.articles[0].unitCost}</span></td></tr>
     `
     let carrito2 = document.getElementById("lista2");
+    
     carrito.map((el)=>{
+      
     carrito2.innerHTML += `
     <tr><td><img src=${el.images[0]} width="100px"></img></td>
     <td id="nombreCarrito">${el.name} </td>
@@ -170,17 +175,12 @@ pagoTransferencia.addEventListener("change", function() {
 // let formadepago = document.getElementsByClassName("metodopago")
 // let pagoseleccionado = false;
 
-// document.getElementById("confirmarinfo").addEventListener("click", ()=>{
+document.getElementById("confirmarinfo").addEventListener("click", ()=>{
  
-// //   for (var i = 0; i < formadepago.length; i++) {
-// //     if (formadepago[i].checked) {
-// //       pagoseleccionado = true;
-// //         break;
-// //     }
-// // }
+  const pago = document.getElementById("formapago")
 
-//     document.getElementsByClassName("formapago").innerText = 'Seleccionado';
-//   });
+    pago.innerText = 'Seleccionado';
+  });
 
 
 // Validación campos de compra
@@ -227,12 +227,12 @@ if (!envioseleccionado) {
 if (cantidades) {
   alert("Por favor, revisa las cantidades de tus productos.");
 }
-if (!pagoseleccionado) {
+if (!pagoseleccionado && pago.length > 1) {
   alert("Por favor, selecciona una forma de pago.");
 }
 if ((pagotarjetaCredito.checked && (numerotarjeta === "" || codigoseguridad === "" || vencimientotarjeta === "")) || ((pagoTransferencia.checked) && numerocuenta === "")) {
   alert("Por favor, revisa los datos de pago.");
 }
-// else { alert("Compra ingresada correctamente.")
-// }
+else { alert("Compra ingresada correctamente.")
+}
 })
