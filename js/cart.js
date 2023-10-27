@@ -114,9 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
     <td id="ress">${productocompra.articles[0].currency} <span class="res">${productocompra.articles[0].unitCost}</span></td></tr>
     `
     let carrito2 = document.getElementById("lista2");
-    
+    function numeroAleatorioEnRango(min, max) {
+      return Math.random() * (max - min) + min;
+    }
     carrito.map((el)=>{
-    el.id = el.id + Date.now()
+    el.id = numeroAleatorioEnRango(1,10000)
     carrito2.innerHTML += `
     <tr><td><img src=${el.images[0]} width="100px"></img></td>
     <td id="nombreCarrito">${el.name} </td>
