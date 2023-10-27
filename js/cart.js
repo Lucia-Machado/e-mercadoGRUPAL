@@ -16,51 +16,51 @@ function recalcular() {
   }
   document.getElementById("subtotal").innerHTML = totalprod.toFixed(2);
 
-  document.getElementById("Premium").addEventListener("click", ()=>{
+  if(document.getElementById("Premium").checked) {
     let costoProductos = document.getElementById("subtotal").innerHTML;
     let envio = parseFloat(costoProductos)*0.15
     document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
     let costofinal = envio+parseFloat(costoProductos)
     document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
-  })
-  document.getElementById("Express").addEventListener("click", ()=>{
+  }
+  if(document.getElementById("Express").checked) {
     let costoProductos = document.getElementById("subtotal").innerHTML;
     let envio = parseFloat(costoProductos)*0.07
     document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
     let costofinal = envio+parseFloat(costoProductos)
     document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
-  })
-  document.getElementById("Standard").addEventListener("click", ()=>{
+  }
+  if(document.getElementById("Standard").checked) {
     let costoProductos = document.getElementById("subtotal").innerHTML;
     let envio = parseFloat(costoProductos)*0.05
     document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
     let costofinal = envio+parseFloat(costoProductos)
     document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
-  })
+  }
 }
 
 // costos de envío y total final
-// document.getElementById("Premium").addEventListener("click", ()=>{
-//   let costoProductos = document.getElementById("subtotal").innerHTML;
-//   let envio = parseFloat(costoProductos)*0.15
-//   document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
-//   let costofinal = envio+parseFloat(costoProductos)
-//   document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
-// })
-// document.getElementById("Express").addEventListener("click", ()=>{
-//   let costoProductos = document.getElementById("subtotal").innerHTML;
-//   let envio = parseFloat(costoProductos)*0.07
-//   document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
-//   let costofinal = envio+parseFloat(costoProductos)
-//   document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
-// })
-// document.getElementById("Standard").addEventListener("click", ()=>{
-//   let costoProductos = document.getElementById("subtotal").innerHTML;
-//   let envio = parseFloat(costoProductos)*0.05
-//   document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
-//   let costofinal = envio+parseFloat(costoProductos)
-//   document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
-// })
+document.getElementById("Premium").addEventListener("click", ()=>{
+  let costoProductos = document.getElementById("subtotal").innerHTML;
+  let envio = parseFloat(costoProductos)*0.15
+  document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
+  let costofinal = envio+parseFloat(costoProductos)
+  document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
+})
+document.getElementById("Express").addEventListener("click", ()=>{
+  let costoProductos = document.getElementById("subtotal").innerHTML;
+  let envio = parseFloat(costoProductos)*0.07
+  document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
+  let costofinal = envio+parseFloat(costoProductos)
+  document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
+})
+document.getElementById("Standard").addEventListener("click", ()=>{
+  let costoProductos = document.getElementById("subtotal").innerHTML;
+  let envio = parseFloat(costoProductos)*0.05
+  document.getElementById("costoenvio").innerHTML = envio.toFixed(2); 
+  let costofinal = envio+parseFloat(costoProductos)
+  document.getElementById("costofinal").innerHTML = " " + costofinal.toFixed(2);
+})
 
 
 let carrito2 = document.getElementById("lista2");
