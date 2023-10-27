@@ -63,7 +63,7 @@ function eliminarDelCarrito(id) {
   
 
 
-  let carritoD = carrito.filter(elem => elem.id !== id++)
+  let carritoD = carrito.filter(elem => elem.id != id)
   console.log("CXKLnds")
   localStorage.setItem("carrito", JSON.stringify(carritoD))
   carrito = carritoD
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let carrito2 = document.getElementById("lista2");
     
     carrito.map((el)=>{
-      
+    el.id = el.id + Date.now()
     carrito2.innerHTML += `
     <tr><td><img src=${el.images[0]} width="100px"></img></td>
     <td id="nombreCarrito">${el.name} </td>
