@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     let nombre = document.querySelector("#txtNombre");
@@ -7,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let segundoApellido = document.querySelector("#txtSegundoApellido");
     let telefono = document.querySelector("#txtTelefono");
 
+
+    
     if (localStorage.getItem("nombre")){
         nombre.value = JSON.parse(localStorage.getItem("nombre"))
         
@@ -56,12 +60,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const btnValidar = document.getElementById("btnValidar")
     btnValidar.addEventListener("click", () => {
-        let nombre = document.querySelector("#txtNombre").value;
-        let apellido = document.querySelector("#txtApellido").value;
-        let email = document.getElementById("txtEmail").value;
-        let segundoNombre = document.querySelector("#txtSegundoNombre").value;
-        let segundoApellido = document.querySelector("#txtSegundoApellido").value;
-        let telefono = document.querySelector("#txtTelefono").value;
+        
+            let nombre = document.querySelector("#txtNombre").value;
+            let apellido = document.querySelector("#txtApellido").value;
+            let email = document.getElementById("txtEmail").value;
+            let segundoNombre = document.querySelector("#txtSegundoNombre").value;
+            let segundoApellido = document.querySelector("#txtSegundoApellido").value;
+            let telefono = document.querySelector("#txtTelefono").value;
+
+        if (nombre.trim() == "" || apellido.trim() == "" || email.trim() == ""){
+            return Swal.fire("Campos Nombre, Apellido y Email deben estar completos!");
+
+        }
         
         
         localStorage.setItem("nombre", JSON.stringify(nombre))
@@ -79,6 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if(telefono){
             localStorage.setItem("validarTelefono", JSON.stringify(telefono))
         }
+
+
+        return Swal.fire("Cambios completados");
     })
 
 })
