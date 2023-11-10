@@ -1,11 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    let nombre = document.querySelector("#txtNombre").value;
-    let apellido = document.querySelector("#txtApellido").value;
+    let nombre = document.querySelector("#txtNombre");
+    let apellido = document.querySelector("#txtApellido");
     let email = document.getElementById("txtEmail");
-    let segundoNombre = document.querySelector("#txtSegundoNombre").value;
-    let segundoApellido = document.querySelector("#txtSegundoApellido").value;
-    let telefono = document.querySelector("#txtTelefono").value;
+    let segundoNombre = document.querySelector("#txtSegundoNombre");
+    let segundoApellido = document.querySelector("#txtSegundoApellido");
+    let telefono = document.querySelector("#txtTelefono");
+
+    if (localStorage.getItem("nombre").length > 1){
+        nombre.value = JSON.parse(localStorage.getItem("nombre"))
+        
+    }
+    if (localStorage.getItem("apellido").length > 1){
+        apellido.value = JSON.parse(localStorage.getItem("apellido"))
+        
+    }
+    if (localStorage.getItem("EmailPersona").length > 1){
+        email.value = JSON.parse(localStorage.getItem("EmailPersona"))
+        
+    }
+    if (localStorage.getItem("validarSegundoNombre").length > 1){
+        segundoNombre.value = JSON.parse(localStorage.getItem("validarSegundoNombre"))
+        
+    }
+    if (localStorage.getItem("validarSegundoApellido").length > 1){
+        segundoApellido.value = JSON.parse(localStorage.getItem("validarSegundoApellido"))
+        
+    }
+    if (localStorage.getItem("validarTelefono").length > 1){
+        telefono.value = JSON.parse(localStorage.getItem("validarTelefono"))
+        
+    }
+   
+    
+
+
 
 
     email.value = localStorage.getItem("EmailPersona")
@@ -33,23 +62,23 @@ document.addEventListener("DOMContentLoaded", function () {
         let segundoNombre = document.querySelector("#txtSegundoNombre").value;
         let segundoApellido = document.querySelector("#txtSegundoApellido").value;
         let telefono = document.querySelector("#txtTelefono").value;
-        let emailPersona = document.getElementById("emailPersona").value;
+        
         
         localStorage.setItem("nombre", JSON.stringify(nombre))
         localStorage.setItem("apellido", JSON.stringify(apellido))
-        localStorage.setItem("EmailPersona", JSON.stringify(email))
+        localStorage.setItem("emailPersona", JSON.stringify(email))
 
         if (segundoNombre){
             console.log("validacion")
-            localstorage.setItem("validarSegundoNombre", JSON.stringify(segundoNombre))
+            localStorage.setItem("validarSegundoNombre", JSON.stringify(segundoNombre))
         }
-        // if(segundoApellido){
+        if(segundoApellido){
 
-        //     localStorage.setItem("validarSegundoApellido", )
-        // }
-        // if(telefono){
-        //     localStorage.setItem("validarTelefono", )
-        // }
+            localStorage.setItem("validarSegundoApellido", JSON.stringify(segundoApellido))
+        }
+        if(telefono){
+            localStorage.setItem("validarTelefono", JSON.stringify(telefono))
+        }
     })
 
 })
