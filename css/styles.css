@@ -1004,3 +1004,14 @@ hr {
   margin: 20px 0;
 }
 
+#imgPerfil {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+#imgPerfil:hover {
+  background-color: #007bff;
+}
