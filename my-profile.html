@@ -44,35 +44,38 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li> <a class="nav-link" href="login.html"> Login</a>
+          <li> <a class="nav-link" href="login.html" id="emailPersona"> Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container" >
+    <div class="container margenPers" >
       <h1>Perfil</h1>
       <hr>
+
+      <form>
       <label for="txtNombre" >Primer nombre*</label>
       <input type="text" id="txtNombre" required class="form-control"><br>
 
-      <label for="txtApellido">Primer apellido</label>
-      <input type="text" id="txtApellido"><br>
+      <label for="txtApellido">Primer apellido*</label>
+      <input required type="text" id="txtApellido"><br>
 
       <label for="txtEmail"> E-mail*</label>
-      <input type="text" id="txtEmail"><br>
+      <input required type="text" id="txtEmail"><br>
 
       <label for="txtSegundoNombre">Segundo nombre</label>
-      <input type="text" id="txtSegundoNombre"><br>
+      <input  type="text" id="txtSegundoNombre"><br>
 
       <label for="txtSegundoApellido">Segundo apellido</label>
-      <input type="text" id="txtSegundoApellido"><br>
+      <input  type="text" id="txtSegundoApellido"><br>
 
-      <label for="txtTelefono"> Telefono de contacto*</label>
+      <label for="txtTelefono"> Telefono de contacto</label>
       <input type="text" id="txtTelefono"><br>
       <hr>
-      <input type="button" value="Guardar Cambios" class="btn btn-success">
+      <input type="button" value="Guardar Cambios" id="btnValidar" class="btn btn-success">
+    </form>
     </div>
     
   </main>
