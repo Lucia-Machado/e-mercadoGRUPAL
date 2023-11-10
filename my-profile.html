@@ -73,7 +73,9 @@
       <label for="txtTelefono"> Telefono de contacto</label>
       <input type="text" id="txtTelefono"><br>
       <label for="imgPerfil">Imagen Perfil</label>
-      <input type="file" id="imgPerfil">
+    <input type="file" id="imgPerfil" onchange="mostrarImagen()">
+
+    <div id="imagenContainer"></div>
      
       <hr>
       <input type="button" value="Guardar Cambios" id="btnValidar" class="btn btn-success">

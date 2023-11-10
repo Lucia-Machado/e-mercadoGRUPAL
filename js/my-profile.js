@@ -82,3 +82,18 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 })
+
+function mostrarImagen() {
+    let input = document.querySelector("#imgPerfil");
+    let container = document.querySelector("#imagenContainer");
+
+    if (input.files && input.files[0]) {
+        let subirFoto = new FileReader();
+
+        subirFoto.onload = function (e) {
+            container.innerHTML = '<img src="' + e.target.result + '" alt="Imagen de perfil">';
+        };
+
+        subirFoto.readAsDataURL(input.files[0]);
+    }
+}
