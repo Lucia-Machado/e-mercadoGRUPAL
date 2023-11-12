@@ -8,9 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let segundoNombre = document.querySelector("#txtSegundoNombre");
     let segundoApellido = document.querySelector("#txtSegundoApellido");
     let telefono = document.querySelector("#txtTelefono");
+    let imagen = document.querySelector("#imgPerfil");
+    let imagenInput = document.querySelector("#imgPerfil");
+    let imagenContainer = document.querySelector("#imagenContainer");
 
+    mostrarImagen(imagenInput, imagenContainer);
 
+    console.log(imagen)
+    mostrarImagen(imagen)
     
+    if (localStorage.getItem("imagen")) {
+        let imagenSrc = JSON.parse(localStorage.getItem("imagen"));
+        imagenContainer.innerHTML = `<img src="${imagenSrc}" alt="Imagen de perfil">`;
+    }
     if (localStorage.getItem("nombre")){
         nombre.value = JSON.parse(localStorage.getItem("nombre"))
         
@@ -35,21 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
         telefono.value = JSON.parse(localStorage.getItem("validarTelefono"))
         
     }
-   
+    if (localStorage.getItem("imagen")){
+        console.log(imagen)
+        imagen = JSON.parse(localStorage.getItem("imagen"))
+        let prev = document.getElementById("imgPerfil")
+        console.log(imagen)
+        prev.innerHTML += `<img src="${imagen}"></img>`
+    }
+    
+    
     
 
 
 
 
-    email.value = localStorage.getItem("EmailPersona")
-    console.log(email)
-    if (!sessionStorage.getItem('loggedIn')) {
-
-        // si no es asi, redirige a login hasta que sea true
-        window.location.href = 'login.html';
-
-
-    }
     let contenidoIndex = localStorage.getItem("EmailPersona");
     let emailPersona = document.getElementById("emailPersona");
     const navlink = document.getElementsByClassName("nav-link")
@@ -67,12 +76,24 @@ document.addEventListener("DOMContentLoaded", function () {
             let segundoNombre = document.querySelector("#txtSegundoNombre").value;
             let segundoApellido = document.querySelector("#txtSegundoApellido").value;
             let telefono = document.querySelector("#txtTelefono").value;
+            let imagen = document.querySelector("#imgPerfil").value;
 
         if (nombre.trim() == "" || apellido.trim() == "" || email.trim() == ""){
             return Swal.fire("Campos Nombre, Apellido y Email deben estar completos!");
 
         }
-        
+        if (imagenInput.files && imagenInput.files[0]) {
+            let subirFoto = new FileReader();
+
+            subirFoto.onload = function (e) {
+                // Mostrar la imagen antes de guardarla en el localStorage
+                imagenContainer.innerHTML = '<img src="' + e.target.result + '" alt="Imagen de perfil">';
+                localStorage.setItem("imagen", JSON.stringify(e.target.result));
+            };
+
+            subirFoto.readAsDataURL(imagenInput.files[0]);
+        }
+
         
         localStorage.setItem("nombre", JSON.stringify(nombre))
         localStorage.setItem("apellido", JSON.stringify(apellido))
@@ -89,6 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if(telefono){
             localStorage.setItem("validarTelefono", JSON.stringify(telefono))
         }
+        if(imagen){
+            localStorage.setItem("imagen", JSON.stringify(imagen))
+        }
 
 
         return Swal.fire("Cambios completados");
@@ -96,10 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-function mostrarImagen() {
-    let input = document.querySelector("#imgPerfil");
-    let container = document.querySelector("#imagenContainer");
-
+function mostrarImagen(input, container) {
     if (input.files && input.files[0]) {
         let subirFoto = new FileReader();
 

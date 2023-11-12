@@ -53,7 +53,7 @@
   <main>
     <div class="container margenPers" >
       <h1 id="perfilh1">Perfil</h1>
-      <div id="imagenContainer"></div>
+      <div id="imagenContainer"><img id="previewImage" src="./img/perfil.png" alt="imagen"></div>
       <hr>
       <form id="formPerfil">
       <label for="txtNombre" >Primer nombre*</label>
@@ -74,8 +74,7 @@
       <label for="txtTelefono"> Telefono de contacto</label>
       <input type="text" id="txtTelefono"><br>
       <label for="imgPerfil">Imagen Perfil</label>
-    <input type="file" id="imgPerfil" onchange="mostrarImagen()">
-
+    <input type="file" id="imgPerfil" onchange="mostrarImagen(imagenInput, imagenContainer)">
    
      
       <hr>
