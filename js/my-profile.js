@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // si no es asi, redirige a login hasta que sea true
         window.location.href = 'login.html';
     }
-    
+
     let nombre = document.querySelector("#txtNombre");
     let apellido = document.querySelector("#txtApellido");
     let email = document.getElementById("txtEmail");
@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         apellido.value = JSON.parse(localStorage.getItem("apellido"))
         
     }
-    if (localStorage.getItem("emailPersona")){
-        email.value = JSON.parse(localStorage.getItem("emailPersona"))
+    if (localStorage.getItem("EmailPersona")){
+        email.value = localStorage.getItem("EmailPersona")
         
     }
     if (localStorage.getItem("validarSegundoNombre")){
