@@ -2,6 +2,12 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    if(!sessionStorage.getItem('loggedIn')) {
+    
+        // si no es asi, redirige a login hasta que sea true
+        window.location.href = 'login.html';
+    }
+    
     let nombre = document.querySelector("#txtNombre");
     let apellido = document.querySelector("#txtApellido");
     let email = document.getElementById("txtEmail");
