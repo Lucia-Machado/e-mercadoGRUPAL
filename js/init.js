@@ -16,27 +16,27 @@ let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-let getJSONData = function(url){
-    let result = {};
-    showSpinner();
-    return fetch(url , {mode: 'no-cors',})
+let getJSONData = function(url) {
+  let result = {};
+  showSpinner();
+
+  return fetch(url)
     .then(response => {
-      if (response.ok) {
-        return console.log(response);
-      }else{
-        throw Error(response.statusText);
+      if (!response.ok) {
+        throw new Error('Error en la solicitud.');
       }
+      return response.json();
     })
-    .then(function(response) {
-          result.status = 'ok';
-          result.data = response;
-          hideSpinner();
-          return result;
+    .then(data => {
+      result.status = 'ok';
+      result.data = data;
+      hideSpinner();
+      return result;
     })
-    .catch(function(error) {
-        result.status = 'error';
-        result.data = error;
-        hideSpinner();
-        return result;
+    .catch(error => {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner();
+      return result;
     });
-}
+};
