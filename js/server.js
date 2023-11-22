@@ -6,7 +6,9 @@ const app = express();
 const port = 3000;
 
 // Ruta del directorio donde se almacenan los JSON descargados
-const jsonDirectory = 'ruta/del/directorio/con/json';
+const jsonDirectory = '../jsons/cats';
+
+
 
 function cargarJSON() {
   const jsonData = [];
@@ -20,6 +22,7 @@ function cargarJSON() {
   return jsonData;
 }
 
+
 app.get('/json', (req, res) => {
   const jsonData = cargarJSON();
   res.json(jsonData);
@@ -28,3 +31,4 @@ app.get('/json', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
 });
+
