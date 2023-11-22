@@ -1,4 +1,4 @@
-const CATEGORIES_URL = "http://localhost:3000/json/cats";
+const CATEGORIES_URL = "http://localhost:3000/json/cats/";
 const PUBLISH_PRODUCT_URL = "http://localhost:3000/json/sell/";
 const PRODUCTS_URL = "http://localhost:3000/json/cats_products/";
 const PRODUCT_INFO_URL = "http://localhost:3000/json/products/";
@@ -19,10 +19,10 @@ let hideSpinner = function(){
 let getJSONData = function(url){
     let result = {};
     showSpinner();
-    return fetch(url)
+    return fetch(url , {mode: 'no-cors',})
     .then(response => {
       if (response.ok) {
-        return response.json();
+        return console.log(response);
       }else{
         throw Error(response.statusText);
       }

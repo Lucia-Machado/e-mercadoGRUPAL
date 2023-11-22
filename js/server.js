@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
+
 
 const app = express();
 const port = 3000;
@@ -26,6 +28,7 @@ function cargarJSON(jsonDirectory) {
 app.get('/json/cats/', (req, res) => {
   const jsonDirectorycats = '../jsons/cats';
   const jsonDatacats = cargarJSON(jsonDirectorycats);
+  console.log(res)
   res.json(jsonDatacats);
 });
 app.get('/json/cats_products/', (req, res) => {
@@ -54,16 +57,14 @@ app.get('/json/user_cart/', (req, res) => {
   res.json(jsonDatacats1);
 });
 
+const corsOptions = {
+  origin: 'http://mi-frontend.com',  // Cambiar al dominio de tu frontend
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
 
-
-// const jsonDatacats_products = cargarJSON(jsonDirectorycats_products);
-
-// const jsonDirectorycats_products = '../jsons/cats';
-//   const jsonDirectoryproducts = '../jsons/cats';
-//   const jsonDirectoryproducts_comments = '../jsons/cats';
-//   const jsonDirectorysell = '../jsons/cats';
-//   const jsonDirectoryuser_cart = '../jsons/cats';
-
+app.use(cors(corsOptions));
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
