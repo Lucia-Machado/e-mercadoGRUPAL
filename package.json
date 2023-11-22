@@ -1,6 +1,17 @@
 {
   "dependencies": {
+    "express": "^4.18.2",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.7.20"
-  }
+  },
+  "name": "e-mercadogrupal",
+  "description": "emercado-api JSONs container para simular una Api REST para el ecommerce e-Mercado.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
