@@ -88,18 +88,13 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-
-    console.log( "hola")
-    getJSONData(CATEGORIES_URL)
-    .then(resultObj =>{
-
-        if (resultObj.status == "ok"){
-        
-        currentCategoriesArray = resultObj.data
-        
-        showCategoriesList()
-        //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
-    }
+    getJSONData(CATEGORIES_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            currentCategoriesArray = resultObj.data[0]
+            showCategoriesList()
+            //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
+        }
+        console.log(resultObj.data[0])
     });
 
     document.getElementById("sortAsc").addEventListener("click", function(){
