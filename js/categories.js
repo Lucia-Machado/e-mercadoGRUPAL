@@ -88,15 +88,18 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData("http://localhost:3000/json/cats/").then(
+
+    console.log( "hola")
+    getJSONData(CATEGORIES_URL)
+    .then(resultObj =>{
+
+        if (resultObj.status == "ok"){
         
-        function(resultObj){
-            console.log("hola" + resultObj.data)
-        if (resultObj.status === "ok"){
-            currentCategoriesArray = resultObj.data
-            showCategoriesList()
-            //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
-        }
+        currentCategoriesArray = resultObj.data
+        
+        showCategoriesList()
+        //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
+    }
     });
 
     document.getElementById("sortAsc").addEventListener("click", function(){
