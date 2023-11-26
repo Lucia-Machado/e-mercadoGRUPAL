@@ -70,11 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
 
-  const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
+
+  const PRODUCT_INFO_URL1 = "http://localhost:3000/products/";
   
- 
+  
+ console.log(PRODUCT_INFO_URL)
+ console.log(PRODUCT_INFO_URL1)
   const numeroProd = localStorage.getItem("selectedProduct");
-  const content = PRODUCT_INFO_URL + numeroProd + ".json";
+  const content = PRODUCT_INFO_URL1 + numeroProd + ".json"
   console.log(content);
   var contenidoDePag = document.getElementById("contenidoDePag");
   fetch(content)
@@ -196,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return "Puntuación no válida";
   }
 
-  let comments = PRODUCT_INFO_COMMENTS_URL + numeroProd + ".json";
+  let comments =  PRODUCT_INFO_COMMENTS_URL + "/" + numeroProd + ".json"
   let infocomentarios = document.querySelector("#comments");
   fetch(comments)
     .then((response) => response.json())
@@ -205,8 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container"> 
           <h4>Comentarios</h4>
           <ul class="list-group" id="lista1">
-            ${data
-              .map(
+            ${data.map(
                 (comment) => `
               <li class="list-group-item">
                 <strong>${comment.user}</strong>
