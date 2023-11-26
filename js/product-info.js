@@ -149,8 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const data1 = {
               id: Date.now(),
               name: data.name,
-              count: data.cost,
-              unitCost: data.soldCount,
+              count: data.soldCount,
+              unitCost: data.cost,
               currency: data.currency,
               image: data.images[0]
             }
