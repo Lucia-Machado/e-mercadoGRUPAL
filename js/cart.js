@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let emailPersona = document.getElementById("emailPersona");
   emailPersona.innerHTML = `Perfil: ${contenidoIndex}`;
   
-  const URL = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
+  const URL = "http://localhost:3000/usercart";
   ////
     
 
@@ -108,13 +108,16 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(URL)
     .then((response) => response.json())
     .then((productocompra) => {
-      carritoCont.innerHTML += `
-    <tr><td><img src=${productocompra.articles[0].image} width="100px"></img></td>
-    <td id="nombreCarrito">${productocompra.articles[0].name} </td>
-    <td>${productocompra.articles[0].currency}<span class="precio"> ${productocompra.articles[0].unitCost}</span></td>
-    <td><input type="number" id="inputCarrito" min="0" value="0" class="cant" onchange="recalcular();"></td>
-    <td id="ress">${productocompra.articles[0].currency} <span class="res">${productocompra.articles[0].unitCost}</span></td></tr>
-    `
+      productocompra[0].articles.map((el) => {
+        
+        carritoCont.innerHTML += `
+      <tr><td><img src=${el.image} width="100px"></img></td>
+      <td id="nombreCarrito">${el.name} </td>
+      <td>${el.currency}<span class="precio"> ${el.unitCost}</span></td>
+      <td><input type="number" id="inputCarrito" min="0" value="0" class="cant" onchange="recalcular();"></td>
+      <td id="ress">${el.currency} <span class="res">${el.unitCost}</span></td></tr>
+      `
+      })
     let carrito2 = document.getElementById("lista2");
     function numeroAleatorioEnRango(min, max) {
       return Math.random() * (max - min) + min;

@@ -83,9 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(content)
     .then((response) => response.json())
     .then(
+
+
       (data) =>{
         
-        (
+        
+        //////////////
+       
+        
+        ( 
           contenidoDePag.innerHTML = `
                 
         <div >
@@ -133,23 +139,49 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
       </div>
         `
-        )
-      
-        const carrito = document.getElementById("agregarCarrito")
-        carrito.addEventListener("click", ()=>{
-            alert("Producto Seleccionado!!")
-          let arrayActual = JSON.parse(localStorage.getItem('carrito')) || [];
-            var nuevoElemento = data;
-            arrayActual.push(nuevoElemento);
 
-            localStorage.setItem('carrito', JSON.stringify(arrayActual));
+        )
+        const URL = "http://localhost:3000/usercart"
+        
+          let carrito = document.getElementById("agregarCarrito");
+          carrito.addEventListener("click", ()=>{
             
-            console.log('Array actualizado en localStorage:', arrayActual);
-        })
-      }
-        );
+            const data1 = {
+              id: Date.now(),
+              name: data.name,
+              count: data.cost,
+              unitCost: data.soldCount,
+              currency: data.currency,
+              image: data.images[0]
+            }
+            console.log(JSON.stringify(data1))
+          
+            fetch(URL, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data1)
+            })
+              .then(response => {
+                // Verifica si la respuesta de la solicitud es exitosa (código de estado 2xx)
+                if (!response.ok) {
+                  throw new Error('La solicitud no fue exitosa');
+                }
+                // Parsea la respuesta como JSON
+                return response.json();
+              })
+              .then(data => {
+                // Maneja los datos obtenidos de la respuesta
+                console.log('Datos agregados:', data1);
+              })
+              .catch(error => {
+                // Captura y maneja cualquier error que ocurra durante la solicitud
+                console.error('Hubo un problema con la solicitud:', error);
+              });
+            })
         
-        
+})
   function calificacion(score) {
     if (score == "5") {
       return `
@@ -326,4 +358,4 @@ document.addEventListener("DOMContentLoaded", () => {
                                       
                                       
                                     });
-});
+})
