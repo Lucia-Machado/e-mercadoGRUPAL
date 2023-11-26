@@ -241,8 +241,6 @@ if ((pagotarjetaCredito.checked && (numerotarjeta === "" || codigoseguridad === 
   alert("Por favor, revisa los datos de pago.");
 }
 else { 
-  
   alert("Compra ingresada correctamente.")
-
 }
 })

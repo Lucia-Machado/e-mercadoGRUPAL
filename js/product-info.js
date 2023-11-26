@@ -83,15 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(content)
     .then((response) => response.json())
     .then(
-
-
       (data) =>{
-        
-        
-        //////////////
-       
-        
-        ( 
+          ( 
           contenidoDePag.innerHTML = `
                 
         <div >
@@ -106,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="cat1">Categoría:</p><p>${data.category}</p>
         <p class="cat1">Cantidad vendidos:</p><p>${data.soldCount}</p>
         <p class="cat1">Imágenes: </p>
-
 
         <div id="carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
