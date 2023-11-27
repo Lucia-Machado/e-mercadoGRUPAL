@@ -226,21 +226,26 @@ let numerocuenta = document.getElementById("numerocuenta")
 let pagotarjetaCredito = document.getElementById("pagotarjetaCredito")
 let pagoTransferencia = document.getElementById("pagoTransferencia")
   if (calle === "" || numero === "" || esquina === "" ) {
-  alert("Por favor, completa la dirección de envío.")
+  alert("Por favor, completa la dirección de envío.");
+  error = true
 } 
 if (!envioseleccionado) {
   alert("Por favor, selecciona una opción de envío.");
+  error = true
 }
 if (cantidades) {
   alert("Por favor, revisa las cantidades de tus productos.");
+  error = true
 }
 if (!pagoseleccionado && formadepago.length > 1) {
   alert("Por favor, selecciona una forma de pago.");
+  error = true
 }
 if ((pagotarjetaCredito.checked && (numerotarjeta === "" || codigoseguridad === "" || vencimientotarjeta === "")) || ((pagoTransferencia.checked) && numerocuenta === "")) {
   alert("Por favor, revisa los datos de pago.");
+  error = true
 }
-else { 
+if (!error) {
   alert("Compra ingresada correctamente.")
 }
 })
